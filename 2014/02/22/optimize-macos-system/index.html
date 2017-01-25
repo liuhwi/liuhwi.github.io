@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="1. 安装brewMac下打开Terminal, 复制并粘贴以下指令：1ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
+<meta name="description" content="安装brewMac下打开Terminal, 复制并粘贴以下指令：1ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
 brew安装常用软件1brew install cmake git wget htop fping curl pigz mtr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAC OS X 系统优化">
 <meta property="og:url" content="http://weihoop.com/2014/02/22/optimize-macos-system/index.html">
 <meta property="og:site_name" content="Weihoop's Blog">
-<meta property="og:description" content="1. 安装brewMac下打开Terminal, 复制并粘贴以下指令：1ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
+<meta property="og:description" content="安装brewMac下打开Terminal, 复制并粘贴以下指令：1ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
 brew安装常用软件1brew install cmake git wget htop fping curl pigz mtr">
-<meta property="og:updated_time" content="2017-01-25T13:52:05.000Z">
+<meta property="og:updated_time" content="2017-01-25T14:50:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC OS X 系统优化">
-<meta name="twitter:description" content="1. 安装brewMac下打开Terminal, 复制并粘贴以下指令：1ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
+<meta name="twitter:description" content="安装brewMac下打开Terminal, 复制并粘贴以下指令：1ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
 brew安装常用软件1brew install cmake git wget htop fping curl pigz mtr">
 
 
@@ -399,17 +399,17 @@ brew安装常用软件1brew install cmake git wget htop fping curl pigz mtr">
       
 
       
-        <h2 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1. 安装brew"></a>1. 安装brew</h2><p>Mac下打开Terminal, 复制并粘贴以下指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div></pre></td></tr></table></figure></p>
+        <h2 id="安装brew"><a href="#安装brew" class="headerlink" title="安装brew"></a>安装brew</h2><p>Mac下打开Terminal, 复制并粘贴以下指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div></pre></td></tr></table></figure></p>
 <p>brew安装常用软件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install cmake git wget htop fping curl pigz mtr</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h2 id="2-安装Xcode"><a href="#2-安装Xcode" class="headerlink" title="2. 安装Xcode"></a>2. 安装Xcode</h2><ul>
+<h2 id="安装Xcode"><a href="#安装Xcode" class="headerlink" title="安装Xcode"></a>安装Xcode</h2><ul>
 <li>网上直接下载安装Xcode,也可以从App Store中下载安装,访问网址：<br><a href="https://developer.apple.com/downloads/index.action" target="_blank" rel="external">https://developer.apple.com/downloads/index.action</a></li>
 <li>安装Xcode中的Command Line Tools:打开Xcode设置,在Downloads选项卡中点击Install”Command Line Tools”</li>
 </ul>
-<h2 id="3-配置终端-amp-设置alias"><a href="#3-配置终端-amp-设置alias" class="headerlink" title="3. 配置终端&amp;设置alias"></a>3. 配置终端&amp;设置alias</h2><p>设置 alias，可以在/etc/bashrc或者/etc/profile添加一下内容。</p>
+<h2 id="配置终端-amp-设置alias"><a href="#配置终端-amp-设置alias" class="headerlink" title="配置终端&amp;设置alias"></a>配置终端&amp;设置alias</h2><p>设置 alias，可以在/etc/bashrc或者/etc/profile添加一下内容。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">cat &gt;&gt; /etc/profile &lt;&lt; EOF</div><div class="line"><span class="built_in">export</span> CLICOLOR=1</div><div class="line"><span class="built_in">export</span> GREP_OPTIONS=<span class="string">"--color=auto"</span></div><div class="line"><span class="comment">#PS1="\u@\h:\w $"</span></div><div class="line">PS1=<span class="string">"\e[32;1m\]\u@\h:\w $ \[\e[0m\]"</span></div><div class="line"></div><div class="line"><span class="built_in">alias</span> l.=<span class="string">'ls -d .*'</span></div><div class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></div><div class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></div><div class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></div><div class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></div><div class="line"><span class="built_in">alias</span> vi=<span class="string">'vim'</span></div><div class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color'</span></div><div class="line"><span class="built_in">alias</span> du1=<span class="string">'du -d 1 -h'</span></div><div class="line"><span class="built_in">alias</span> du2=<span class="string">'du -d 2 -h'</span></div><div class="line"><span class="built_in">alias</span> du3=<span class="string">'du -d 3 -h'</span></div><div class="line"><span class="built_in">alias</span> chosts=<span class="string">"cat /etc/hosts"</span></div><div class="line"><span class="built_in">alias</span> mhosts=<span class="string">"sudo vim /etc/hosts"</span></div><div class="line"></div><div class="line">HISTFILESIZE=5000</div><div class="line">HISTSIZE=5000</div><div class="line">HISTTIMEFORMAT=<span class="string">"%Y%m%d %T "</span></div><div class="line">EOF</div><div class="line"></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
-<h2 id="4-安装pip"><a href="#4-安装pip" class="headerlink" title="4. 安装pip"></a>4. 安装pip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo easy_install pip</div></pre></td></tr></table></figure>
-<h2 id="5-安装sshpt"><a href="#5-安装sshpt" class="headerlink" title="5. 安装sshpt"></a>5. 安装sshpt</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">brew install gcc</div><div class="line">sudo easy_install pip</div><div class="line">sudo su -</div><div class="line">ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install pycrypto</div><div class="line">wget http://sshpt.googlecode.com/files/sshpt-1.2.0.tar.gz</div><div class="line">tar zxvf sshpt-1.2.0.tar.gz</div><div class="line"><span class="built_in">cd</span> sshpt</div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure>
+<h2 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a>安装pip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo easy_install pip</div></pre></td></tr></table></figure>
+<h2 id="安装sshpt"><a href="#安装sshpt" class="headerlink" title="安装sshpt"></a>安装sshpt</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">brew install gcc</div><div class="line">sudo easy_install pip</div><div class="line">sudo su -</div><div class="line">ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install pycrypto</div><div class="line">wget http://sshpt.googlecode.com/files/sshpt-1.2.0.tar.gz</div><div class="line">tar zxvf sshpt-1.2.0.tar.gz</div><div class="line"><span class="built_in">cd</span> sshpt</div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -600,7 +600,7 @@ brew安装常用软件1brew install cmake git wget htop fping curl pigz mtr">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装brew"><span class="nav-number">1.</span> <span class="nav-text">1. 安装brew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Xcode"><span class="nav-number">2.</span> <span class="nav-text">2. 安装Xcode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置终端-amp-设置alias"><span class="nav-number">3.</span> <span class="nav-text">3. 配置终端&设置alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-安装pip"><span class="nav-number">4.</span> <span class="nav-text">4. 安装pip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-安装sshpt"><span class="nav-number">5.</span> <span class="nav-text">5. 安装sshpt</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装brew"><span class="nav-number">1.</span> <span class="nav-text">安装brew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Xcode"><span class="nav-number">2.</span> <span class="nav-text">安装Xcode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置终端-amp-设置alias"><span class="nav-number">3.</span> <span class="nav-text">配置终端&设置alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装pip"><span class="nav-number">4.</span> <span class="nav-text">安装pip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装sshpt"><span class="nav-number">5.</span> <span class="nav-text">安装sshpt</span></a></li></ol></div>
             
 
           </div>
