@@ -86,55 +86,25 @@
 
 
 
-<meta name="description" content="登录MySQL
-
-
-登录使用默认3306端口的MySQL
-
-mysql -u root -p
-
-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）
-
-mysql -u root -p –protocol=tcp –host=localhost –port=3307
-
-通过socket套接字管理不同端口的多个MySQL
-
-mysql -u root -p –s">
+<meta name="description" content="登录
+1. 登录使用默认3306端口的MySQL1mysql -u root -p
+2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）1mysql -u root -p –protocol=tcp –host=localhost –port=3307
+3. 通过socket套接字管理不同端口的多个MySQL1mysql -u root -p –socke">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql-cmd">
 <meta property="og:url" content="http://weihoop.com/2009/11/02/mysql-cmd/index.html">
 <meta property="og:site_name" content="Weihoop's Blog">
-<meta property="og:description" content="登录MySQL
-
-
-登录使用默认3306端口的MySQL
-
-mysql -u root -p
-
-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）
-
-mysql -u root -p –protocol=tcp –host=localhost –port=3307
-
-通过socket套接字管理不同端口的多个MySQL
-
-mysql -u root -p –s">
-<meta property="og:updated_time" content="2017-01-25T19:31:47.000Z">
+<meta property="og:description" content="登录
+1. 登录使用默认3306端口的MySQL1mysql -u root -p
+2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）1mysql -u root -p –protocol=tcp –host=localhost –port=3307
+3. 通过socket套接字管理不同端口的多个MySQL1mysql -u root -p –socke">
+<meta property="og:updated_time" content="2017-01-25T19:44:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql-cmd">
-<meta name="twitter:description" content="登录MySQL
-
-
-登录使用默认3306端口的MySQL
-
-mysql -u root -p
-
-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）
-
-mysql -u root -p –protocol=tcp –host=localhost –port=3307
-
-通过socket套接字管理不同端口的多个MySQL
-
-mysql -u root -p –s">
+<meta name="twitter:description" content="登录
+1. 登录使用默认3306端口的MySQL1mysql -u root -p
+2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）1mysql -u root -p –protocol=tcp –host=localhost –port=3307
+3. 通过socket套接字管理不同端口的多个MySQL1mysql -u root -p –socke">
 
 
 
@@ -435,225 +405,79 @@ mysql -u root -p –s">
       
 
       
-        <hr>
-<p>登录MySQL</p>
-<hr>
-<ol>
-<li>登录使用默认3306端口的MySQL</li>
-</ol>
-<p>mysql -u root -p</p>
-<ol>
-<li>通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</li>
-</ol>
-<p>mysql -u root -p –protocol=tcp –host=localhost –port=3307</p>
-<ol>
-<li>通过socket套接字管理不同端口的多个MySQL</li>
-</ol>
-<p>mysql -u root -p –socket=/tmp/mysql3307.sock</p>
-<ol>
-<li>通过端口和IP管理不同端口的多个MySQL</li>
-</ol>
-<p>mysql -u root -p -P 3306 -h 127.0.0.1</p>
-<hr>
-<p>数据库操作SQL语句</p>
-<hr>
-<ol>
-<li>显示Mysql所有数据库</li>
-</ol>
-<p>mysql &gt; SHOW DATABASES;</p>
-<ol>
-<li>创建名称为test的数据库</li>
-</ol>
-<p>mysql &gt; CREATE DATABASE test;</p>
-<ol>
-<li><p>删除名称为test的数据库<br>mysql &gt; DROP DATABASE test;</p>
-</li>
-<li><p>选择test数据库<br> mysql &gt; USE test;</p>
-</li>
-</ol>
-<hr>
-<p>表操作SQL语句</p>
-<hr>
-<ol>
-<li>显示当前数据库中存在什么表</li>
-</ol>
-<p>mysql &gt; SHOW TABLES;</p>
-<ol>
-<li>创建数据库表user：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。</li>
-</ol>
-<p>mysql &gt; CREATE TABLE <code>spitfire</code> (<br><code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT,<br><code>username</code> VARCHAR( 20 ) NOT NULL,<br><code>password</code> CHAR( 32 ) NOT NULL,<br><code>time</code> DATETIME NOT NULL,<br><code>number</code> FLOAT( 10 ) NOT NULL,<br><code>content</code> TEXT NOT NULL,<br>PRIMARY KEY (<code>id</code>)<br>) ENGINE = INNODB ;</p>
+        <h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><hr>
+<h3 id="1-登录使用默认3306端口的MySQL"><a href="#1-登录使用默认3306端口的MySQL" class="headerlink" title="1. 登录使用默认3306端口的MySQL"></a>1. 登录使用默认3306端口的MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
+<h3 id="2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）"><a href="#2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）" class="headerlink" title="2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）"></a>2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –protocol=tcp –host=localhost –port=3307</div></pre></td></tr></table></figure>
+<h3 id="3-通过socket套接字管理不同端口的多个MySQL"><a href="#3-通过socket套接字管理不同端口的多个MySQL" class="headerlink" title="3. 通过socket套接字管理不同端口的多个MySQL"></a>3. 通过socket套接字管理不同端口的多个MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –socket=/tmp/mysql3307.sock</div></pre></td></tr></table></figure>
+<h3 id="4-通过端口和IP管理不同端口的多个MySQL"><a href="#4-通过端口和IP管理不同端口的多个MySQL" class="headerlink" title="4. 通过端口和IP管理不同端口的多个MySQL"></a>4. 通过端口和IP管理不同端口的多个MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p -P 3306 -h 127.0.0.1</div></pre></td></tr></table></figure>
+<h2 id="数据库操作SQL语句"><a href="#数据库操作SQL语句" class="headerlink" title="数据库操作SQL语句"></a>数据库操作SQL语句</h2><hr>
+<h3 id="1-显示Mysql所有数据库"><a href="#1-显示Mysql所有数据库" class="headerlink" title="1. 显示Mysql所有数据库"></a>1. 显示Mysql所有数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; SHOW DATABASES;</div></pre></td></tr></table></figure>
+<h3 id="2-创建名称为test的数据库"><a href="#2-创建名称为test的数据库" class="headerlink" title="2. 创建名称为test的数据库"></a>2. 创建名称为test的数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; CREATE DATABASE test;</div></pre></td></tr></table></figure>
+<h3 id="3-删除名称为test的数据库"><a href="#3-删除名称为test的数据库" class="headerlink" title="3. 删除名称为test的数据库"></a>3. 删除名称为test的数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; DROP DATABASE test;</div></pre></td></tr></table></figure>
+<h3 id="4-选择test数据库"><a href="#4-选择test数据库" class="headerlink" title="4. 选择test数据库"></a>4. 选择test数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; USE test;</div></pre></td></tr></table></figure>
+<h2 id="表操作SQL语句"><a href="#表操作SQL语句" class="headerlink" title="表操作SQL语句"></a>表操作SQL语句</h2><hr>
+<h3 id="1-显示当前数据库中存在什么表"><a href="#1-显示当前数据库中存在什么表" class="headerlink" title="1. 显示当前数据库中存在什么表"></a>1. 显示当前数据库中存在什么表</h3><p>mysql &gt; SHOW TABLES;</p>
+<h3 id="2-创建数据库表user：在mysql-gt-后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。"><a href="#2-创建数据库表user：在mysql-gt-后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。" class="headerlink" title="2. 创建数据库表user：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。"></a>2. 创建数据库表user：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。</h3><p>mysql &gt; CREATE TABLE <code>spitfire</code> (<br><code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT,<br><code>username</code> VARCHAR( 20 ) NOT NULL,<br><code>password</code> CHAR( 32 ) NOT NULL,<br><code>time</code> DATETIME NOT NULL,<br><code>number</code> FLOAT( 10 ) NOT NULL,<br><code>content</code> TEXT NOT NULL,<br>PRIMARY KEY (<code>id</code>)<br>) ENGINE = INNODB ;</p>
 <p>INSERT INTO <code>spitfire</code> (<code>id</code>, <code>username</code>, <code>password</code>, <code>time</code>, <code>number</code>) VALUES (’1′, ‘lhw’, ’123456′, ’2011-1-1′, 8888);</p>
-<ol>
-<li>查看user表结构</li>
-</ol>
-<p>mysql &gt; DESCRIBE user;</p>
-<hr>
-<p>从表中检索信息</p>
-<hr>
-<ol>
-<li>从user表中检索所有记录</li>
-</ol>
-<p>mysql &gt; SELECT * FROM user;</p>
-<ol>
-<li>从user表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</li>
-</ol>
+<h3 id="3-查看user表结构"><a href="#3-查看user表结构" class="headerlink" title="3. 查看user表结构"></a>3. 查看user表结构</h3><p>mysql &gt; DESCRIBE user;</p>
+<h2 id="从表中检索信息"><a href="#从表中检索信息" class="headerlink" title="从表中检索信息"></a>从表中检索信息</h2><hr>
+<h3 id="1-从user表中检索所有记录"><a href="#1-从user表中检索所有记录" class="headerlink" title="1. 从user表中检索所有记录"></a>1. 从user表中检索所有记录</h3><p>mysql &gt; SELECT * FROM user;</p>
+<h3 id="2-从user表中检索特定的行"><a href="#2-从user表中检索特定的行" class="headerlink" title="2. 从user表中检索特定的行"></a>2. 从user表中检索特定的行</h3><p>字段username等于abc，字段number等于1，按字段id降序排列</p>
 <p>mysql &gt; SELECT * FROM user WHERE username = ‘abc’ AND number=’1′ ORDER BY id DESC;</p>
-<ol>
-<li>从user表中检索指定的字段：username和password</li>
-</ol>
+<h3 id="3-从user表中检索指定的字段"><a href="#3-从user表中检索指定的字段" class="headerlink" title="3. 从user表中检索指定的字段"></a>3. 从user表中检索指定的字段</h3><p>指定username和password</p>
 <p>mysql &gt; SELECT username, password FROM zhangyan;</p>
-<ol>
-<li>从user表中检索出唯一的不重复记录：</li>
-</ol>
-<p>mysql &gt; SELECT DISTINCT username FROM user;</p>
-<ol>
-<li>插入信息到user表</li>
-</ol>
-<p>mysql &gt;</p>
-<ol>
-<li>更新user表中的指定信息</li>
-</ol>
-<p>mysql &gt; UPDATE user SET content = ‘hello china’ WHERE username = ‘abc’;</p>
-<ol>
-<li>删除user表中的指定信息</li>
-</ol>
-<p>mysql &gt; DELETE FROM user WHERE id = 1;</p>
-<ol>
-<li>清空user表</li>
-</ol>
-<p>mysql &gt; DELETE FROM user;</p>
-<h1 id="快速清空表，利用SQL语句清空了该数据表，而不保留日志"><a href="#快速清空表，利用SQL语句清空了该数据表，而不保留日志" class="headerlink" title="快速清空表，利用SQL语句清空了该数据表，而不保留日志"></a>快速清空表，利用SQL语句清空了该数据表，而不保留日志</h1><p>mysql &gt; TRUNCATE TABLE TableName</p>
-<p>10.删除user表</p>
-<p>mysql &gt; DROP TABLE user;</p>
-<p>11.更改表结构，将user表username字段的字段类型改为CHAR(25)</p>
+<h3 id="4-从user表中检索出唯一的不重复记录"><a href="#4-从user表中检索出唯一的不重复记录" class="headerlink" title="4. 从user表中检索出唯一的不重复记录"></a>4. 从user表中检索出唯一的不重复记录</h3><p>mysql &gt; SELECT DISTINCT username FROM user;</p>
+<h3 id="5-插入信息到user表"><a href="#5-插入信息到user表" class="headerlink" title="5. 插入信息到user表"></a>5. 插入信息到user表</h3><p>mysql &gt;</p>
+<h3 id="6-更新user表中的指定信息"><a href="#6-更新user表中的指定信息" class="headerlink" title="6. 更新user表中的指定信息"></a>6. 更新user表中的指定信息</h3><p>mysql &gt; UPDATE user SET content = ‘hello china’ WHERE username = ‘abc’;</p>
+<h3 id="7-删除user表中的指定信息"><a href="#7-删除user表中的指定信息" class="headerlink" title="7. 删除user表中的指定信息"></a>7. 删除user表中的指定信息</h3><p>mysql &gt; DELETE FROM user WHERE id = 1;</p>
+<h3 id="8-清空user表"><a href="#8-清空user表" class="headerlink" title="8. 清空user表"></a>8. 清空user表</h3><p>mysql &gt; DELETE FROM user;</p>
+<h3 id="9-快速清空表"><a href="#9-快速清空表" class="headerlink" title="9. 快速清空表"></a>9. 快速清空表</h3><p>利用SQL语句清空了该数据表，而不保留日志</p>
+<p>mysql &gt; TRUNCATE TABLE TableName</p>
+<h3 id="10-删除user表"><a href="#10-删除user表" class="headerlink" title="10.删除user表"></a>10.删除user表</h3><p>mysql &gt; DROP TABLE user;</p>
+<h3 id="11-更改表结构"><a href="#11-更改表结构" class="headerlink" title="11.更改表结构"></a>11.更改表结构</h3><p>将user表username字段的字段类型改为CHAR(25)</p>
 <p>mysql &gt; ALTER TABLE user CHANGE username username CHAR(25);</p>
-<p>12.将当前目录下的mysql.sql导入数据库</p>
-<p>mysql &gt; SOURCE ./mysql.sql;</p>
-<hr>
-<p>表引擎</p>
-<hr>
-<ol>
-<li>查看引擎</li>
-</ol>
-<p>mysql &gt; show table status like ‘TableName’\G;<br>mysql &gt; show table status from tablename; # 这条最直接<br>mysql &gt; show create table tablename;<br>mysql -uroot -p -e “show table status” -D DBname|sed ’1d’ | awk ‘{print $1″ “$2}’<br>mysql -uroot -p123456 -e “show table status from dc\G;”  | grep -ie “Name” -ie “Engine”</p>
-<p>2、转换引擎：</p>
-<p>mysql &gt; ALTER TABLE <code>table_name</code> ENGINE=MyISAM;</p>
-<hr>
-<p>表索引</p>
-<hr>
-<ol>
-<li>普通索引</li>
-</ol>
-<p>mysql &gt; ALTER TABLE <code>DBname</code>.<code>TableName</code> ADD INDEX <code>user_add_date</code> (<code>user_add_date</code>);</p>
-<p>2、聚合索引</p>
-<p>mysql &gt; ALTER TABLE <code>DBname</code>.<code>TableName</code> ADD INDEX <code>user_channel</code> (<code>user_channel</code>, <code>user_from_site</code>);</p>
+<h3 id="12-将当前目录下的mysql-sql导入数据库"><a href="#12-将当前目录下的mysql-sql导入数据库" class="headerlink" title="12.将当前目录下的mysql.sql导入数据库"></a>12.将当前目录下的mysql.sql导入数据库</h3><p>mysql &gt; SOURCE ./mysql.sql;</p>
+<h2 id="表引擎"><a href="#表引擎" class="headerlink" title="表引擎"></a>表引擎</h2><hr>
+<h3 id="1-查看引擎"><a href="#1-查看引擎" class="headerlink" title="1. 查看引擎"></a>1. 查看引擎</h3><p>mysql &gt; show table status like ‘TableName’\G;<br>mysql &gt; show table status from tablename; # 这条最直接<br>mysql &gt; show create table tablename;<br>mysql -uroot -p -e “show table status” -D DBname|sed ’1d’ | awk ‘{print $1″ “$2}’<br>mysql -uroot -p123456 -e “show table status from dc\G;”  | grep -ie “Name” -ie “Engine”</p>
+<h3 id="2-转换引擎："><a href="#2-转换引擎：" class="headerlink" title="2. 转换引擎："></a>2. 转换引擎：</h3><p>mysql &gt; ALTER TABLE <code>table_name</code> ENGINE=MyISAM;</p>
+<h2 id="表索引"><a href="#表索引" class="headerlink" title="表索引"></a>表索引</h2><hr>
+<h3 id="1-普通索引"><a href="#1-普通索引" class="headerlink" title="1. 普通索引"></a>1. 普通索引</h3><p>mysql &gt; ALTER TABLE <code>DBname</code>.<code>TableName</code> ADD INDEX <code>user_add_date</code> (<code>user_add_date</code>);</p>
+<h3 id="2、聚合索引"><a href="#2、聚合索引" class="headerlink" title="2、聚合索引"></a>2、聚合索引</h3><p>mysql &gt; ALTER TABLE <code>DBname</code>.<code>TableName</code> ADD INDEX <code>user_channel</code> (<code>user_channel</code>, <code>user_from_site</code>);</p>
 <p>chown mysql.mysql  g5_users.*</p>
-<hr>
-<p>触发器</p>
-<hr>
-<ol>
-<li>查看触发器语句</li>
-</ol>
-<p>mysql&gt; show CREATE TRIGGER tablesname\G;</p>
-<h1 id="或者"><a href="#或者" class="headerlink" title="或者"></a>或者</h1><p>mysql&gt; use dbname<br>mysql&gt; SHOW TRIGGERS;</p>
-<ol>
-<li>查看表的触发器：</li>
-</ol>
-<p>mysql&gt; SHOW TRIGGERS FROM tablename\G;</p>
-<hr>
-<p>mysql用户管理</p>
-<hr>
-<ol>
-<li>mysql修改密码</li>
-</ol>
-<p>mysqladmin -uroot -p”oldpwd” password “newpwd”</p>
-<ol>
-<li>使用下面语句生成加密密码，之后修改密码为加密后的密码</li>
-</ol>
-<p>mysql&gt; SELECT PASSWORD(‘PAWD’);<br>mysql&gt; SET PASSWORD FOR spitfire@”%” = PAWD；</p>
-<ol>
-<li>使用update语句,密码同样为加密后的密码</li>
-</ol>
-<p>mysql&gt; UPDATE USER SET password=”newpwd” WHERE user=root and host=localhost;<br>mysql&gt; FLUSH PRIVILEGES;</p>
-<hr>
-<p>权限操作SQL语句</p>
-<hr>
-<ol>
-<li>查看用户信息</li>
-</ol>
-<p>mysql -uroot -p -e “use mysql;select user,host from user”</p>
-<ol>
-<li>创建一个具有root权限，可从任何IP登录的用户leon，密码为123456</li>
-</ol>
-<p>mysql &gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘leon’@’%’ IDENTIFIED BY ’123456′;</p>
-<ol>
-<li>创建一个具有“数据操作”、“结构操作”权限，只能从192.168.1.<em>*</em>登录的用户leon，密码为123456</li>
-</ol>
-<p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON <em>.</em> TO ‘leon’@’192.168.1.%’ IDENTIFIED BY ’123456′;</p>
-<ol>
-<li>创建一个只拥有“数据操作”权限，只能从192.168.1.24登录，只能操作test数据库的user表的用户leon，密码为123456</li>
-</ol>
-<p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE ON  test.user TO ‘leon’@’192.168.1.24′ IDENTIFIED BY ’123456′;</p>
-<ol>
-<li>创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456</li>
-</ol>
-<p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON test.* TO ‘leon’@’%’ IDENTIFIED BY ’123456′;</p>
-<ol>
-<li>创建一个拥有“数据查询”权限，可以从192.168.0.10登陆，只能查询table1和table2表的用户query，密码是zbcx*123456#</li>
-</ol>
-<p>mysql &gt; GRANT SELECT  ON table1.<em> TO ‘query’@’192.168.0.10′ IDENTIFIED BY ‘zbcx</em>123456#’;<br>mysql &gt; GRANT SELECT  ON table1.<em> TO ‘query’@’192.168.0.10′ IDENTIFIED BY ‘zbcx</em>123456#’;</p>
-<ol>
-<li>删除用户</li>
-</ol>
-<p>mysql &gt; DROP USER ‘spitfire’@’%’;</p>
-<ol>
-<li>去除用户权限</li>
-</ol>
-<p>mysql &gt; REVOKE ALL PRIVILEGES ON <em>.</em> from ‘query’@’192.168.0.%’;<br>mysql &gt; REVOKE GRANT OPTION  ON <em>.</em> from ‘query’@’192.168.1.%’;</p>
-<ol>
-<li>查看用户权限</li>
-</ol>
-<p>mysql &gt; show grants for root@’localhost’;</p>
-<hr>
-<p>MySQL备份</p>
-<hr>
-<ol>
-<li>混合引擎</li>
-</ol>
-<p>mysqldump -uroot -p –default-character-set=utf8 –opt –lock-all-tables db_name &gt; db_name.sql</p>
-<h1 id="导出全库到一个文件"><a href="#导出全库到一个文件" class="headerlink" title="导出全库到一个文件"></a>导出全库到一个文件</h1><p>mysqldump -uroot -p –default-character-set=utf8 –lock-all-tables –flush-logs –all-databases  &gt; x.sql<br>mysqldump -uroot -p –default-character-set=utf8 –hex-blob –routines –lock-all-tables database &gt; /tmp/database.sql</p>
-<hr>
-<p>主从复制</p>
-<hr>
-<ol>
-<li>查看从库命令：</li>
-</ol>
-<p>mysql -uroot -p -e “select HOST from information_schema.PROCESSLIST where STATE like ‘%slave%’;”</p>
-<ol>
-<li>校验主从表</li>
-</ol>
-<p>mk-table-checksum h=192.168.0.1,u=root,p=xxx h=192.168.0.2,u=root,p=xxx -d test -t test</p>
-<h1 id="或者同时进入2个库，同时执行"><a href="#或者同时进入2个库，同时执行" class="headerlink" title="或者同时进入2个库，同时执行"></a>或者同时进入2个库，同时执行</h1><p>mysql&gt;select conunt(*) from test;<br>mysql&gt;checksum table table_name;</p>
-<hr>
-<p>查看mysql版本</p>
-<hr>
-<ol>
-<li>mysql -V</li>
-<li>mysql &gt; status;</li>
-<li>mysql –help | grep Distrib</li>
-<li>mysql &gt; select version();</li>
-</ol>
-<hr>
-<p>其它mysql信息查看</p>
-<hr>
-<ol>
-<li>查看mysql编译参数</li>
-</ol>
-<p>cat /usr/local/mysql/bin/mysqlbug |grep ./configure</p>
-<ol>
-<li>查看mysql默认编码</li>
-</ol>
-<p>mysql &gt; SHOW VARIABLES LIKE ‘character<em>set</em>%’;</p>
+<h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><hr>
+<h3 id="1-查看触发器语句"><a href="#1-查看触发器语句" class="headerlink" title="1. 查看触发器语句"></a>1. 查看触发器语句</h3><p>mysql&gt; show CREATE TRIGGER tablesname\G;</p>
+<p>或者</p>
+<p>mysql&gt; use dbname<br>mysql&gt; SHOW TRIGGERS;</p>
+<h3 id="2-查看表的触发器"><a href="#2-查看表的触发器" class="headerlink" title="2. 查看表的触发器"></a>2. 查看表的触发器</h3><p>mysql&gt; SHOW TRIGGERS FROM tablename\G;</p>
+<h2 id="mysql用户管理"><a href="#mysql用户管理" class="headerlink" title="mysql用户管理"></a>mysql用户管理</h2><hr>
+<h3 id="1-mysql修改密码"><a href="#1-mysql修改密码" class="headerlink" title="1. mysql修改密码"></a>1. mysql修改密码</h3><p>mysqladmin -uroot -p”oldpwd” password “newpwd”</p>
+<h3 id="2-使用下面语句生成加密密码，之后修改密码为加密后的密码"><a href="#2-使用下面语句生成加密密码，之后修改密码为加密后的密码" class="headerlink" title="2. 使用下面语句生成加密密码，之后修改密码为加密后的密码"></a>2. 使用下面语句生成加密密码，之后修改密码为加密后的密码</h3><p>mysql&gt; SELECT PASSWORD(‘PAWD’);<br>mysql&gt; SET PASSWORD FOR spitfire@”%” = PAWD；</p>
+<h3 id="3-使用update语句-密码同样为加密后的密码"><a href="#3-使用update语句-密码同样为加密后的密码" class="headerlink" title="3. 使用update语句,密码同样为加密后的密码"></a>3. 使用update语句,密码同样为加密后的密码</h3><p>mysql&gt; UPDATE USER SET password=”newpwd” WHERE user=root and host=localhost;<br>mysql&gt; FLUSH PRIVILEGES;</p>
+<h2 id="权限操作SQL语句"><a href="#权限操作SQL语句" class="headerlink" title="权限操作SQL语句"></a>权限操作SQL语句</h2><hr>
+<h3 id="1-查看用户信息"><a href="#1-查看用户信息" class="headerlink" title="1. 查看用户信息"></a>1. 查看用户信息</h3><p>mysql -uroot -p -e “use mysql;select user,host from user”</p>
+<h3 id="2-创建一个具有root权限，可从任何IP登录的用户leon，密码为123456"><a href="#2-创建一个具有root权限，可从任何IP登录的用户leon，密码为123456" class="headerlink" title="2. 创建一个具有root权限，可从任何IP登录的用户leon，密码为123456"></a>2. 创建一个具有root权限，可从任何IP登录的用户leon，密码为123456</h3><p>mysql &gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘leon’@’%’ IDENTIFIED BY ’123456′;</p>
+<h3 id="3-创建一个具有“数据操作”、“结构操作”权限，只能从192-168-1-登录的用户leon，密码为123456"><a href="#3-创建一个具有“数据操作”、“结构操作”权限，只能从192-168-1-登录的用户leon，密码为123456" class="headerlink" title="3. 创建一个具有“数据操作”、“结构操作”权限，只能从192.168.1.*登录的用户leon，密码为123456"></a>3. 创建一个具有“数据操作”、“结构操作”权限，只能从192.168.1.<em>*</em>登录的用户leon，密码为123456</h3><p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON <em>.</em> TO ‘leon’@’192.168.1.%’ IDENTIFIED BY ’123456′;</p>
+<h3 id="4-创建一个只拥有“数据操作”权限，只能从192-168-1-24登录，只能操作test数据库的user表的用户leon，密码为123456"><a href="#4-创建一个只拥有“数据操作”权限，只能从192-168-1-24登录，只能操作test数据库的user表的用户leon，密码为123456" class="headerlink" title="4. 创建一个只拥有“数据操作”权限，只能从192.168.1.24登录，只能操作test数据库的user表的用户leon，密码为123456"></a>4. 创建一个只拥有“数据操作”权限，只能从192.168.1.24登录，只能操作test数据库的user表的用户leon，密码为123456</h3><p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE ON  test.user TO ‘leon’@’192.168.1.24′ IDENTIFIED BY ’123456′;</p>
+<h3 id="5-创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456"><a href="#5-创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456" class="headerlink" title="5. 创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456"></a>5. 创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456</h3><p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON test.* TO ‘leon’@’%’ IDENTIFIED BY ’123456′;</p>
+<h3 id="6-创建一个拥有“数据查询”权限，可以从192-168-0-10登陆，只能查询table1和table2表的用户query，密码是zbcx-123456"><a href="#6-创建一个拥有“数据查询”权限，可以从192-168-0-10登陆，只能查询table1和table2表的用户query，密码是zbcx-123456" class="headerlink" title="6. 创建一个拥有“数据查询”权限，可以从192.168.0.10登陆，只能查询table1和table2表的用户query，密码是zbcx*123456"></a>6. 创建一个拥有“数据查询”权限，可以从192.168.0.10登陆，只能查询table1和table2表的用户query，密码是zbcx*123456</h3><p>mysql &gt; GRANT SELECT  ON table1.<em> TO ‘query’@’192.168.0.10′ IDENTIFIED BY ‘zbcx</em>123456#’;<br>mysql &gt; GRANT SELECT  ON table1.<em> TO ‘query’@’192.168.0.10′ IDENTIFIED BY ‘zbcx</em>123456#’;</p>
+<h3 id="7-删除用户"><a href="#7-删除用户" class="headerlink" title="7. 删除用户"></a>7. 删除用户</h3><p>mysql &gt; DROP USER ‘spitfire’@’%’;</p>
+<h3 id="8-去除用户权限"><a href="#8-去除用户权限" class="headerlink" title="8. 去除用户权限"></a>8. 去除用户权限</h3><p>mysql &gt; REVOKE ALL PRIVILEGES ON <em>.</em> from ‘query’@’192.168.0.%’;<br>mysql &gt; REVOKE GRANT OPTION  ON <em>.</em> from ‘query’@’192.168.1.%’;</p>
+<h3 id="9-查看用户权限"><a href="#9-查看用户权限" class="headerlink" title="9. 查看用户权限"></a>9. 查看用户权限</h3><p>mysql &gt; show grants for root@’localhost’;</p>
+<h2 id="MySQL备份"><a href="#MySQL备份" class="headerlink" title="MySQL备份"></a>MySQL备份</h2><hr>
+<h3 id="1-混合引擎"><a href="#1-混合引擎" class="headerlink" title="1. 混合引擎"></a>1. 混合引擎</h3><p>mysqldump -uroot -p –default-character-set=utf8 –opt –lock-all-tables db_name &gt; db_name.sql</p>
+<h3 id="2-导出全库到一个文件"><a href="#2-导出全库到一个文件" class="headerlink" title="2. 导出全库到一个文件"></a>2. 导出全库到一个文件</h3><p>mysqldump -uroot -p –default-character-set=utf8 –lock-all-tables –flush-logs –all-databases  &gt; x.sql<br>mysqldump -uroot -p –default-character-set=utf8 –hex-blob –routines –lock-all-tables database &gt; /tmp/database.sql</p>
+<h2 id="主从复制"><a href="#主从复制" class="headerlink" title="##主从复制"></a>##主从复制</h2><h3 id="1-查看从库命令："><a href="#1-查看从库命令：" class="headerlink" title="1. 查看从库命令："></a>1. 查看从库命令：</h3><p>mysql -uroot -p -e “select HOST from information_schema.PROCESSLIST where STATE like ‘%slave%’;”</p>
+<h3 id="2-校验主从表"><a href="#2-校验主从表" class="headerlink" title="2. 校验主从表"></a>2. 校验主从表</h3><p>mk-table-checksum h=192.168.0.1,u=root,p=xxx h=192.168.0.2,u=root,p=xxx -d test -t test</p>
+<p>或者同时进入2个库，同时执行</p>
+<p>mysql&gt;select conunt(*) from test;<br>mysql&gt;checksum table table_name;</p>
+<h3 id="查看mysql版本"><a href="#查看mysql版本" class="headerlink" title="查看mysql版本"></a>查看mysql版本</h3><hr>
+<h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><p>mysql -V</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>mysql &gt; status;</p>
+<h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h3><p>mysql –help | grep Distrib</p>
+<h3 id="方法4"><a href="#方法4" class="headerlink" title="方法4"></a>方法4</h3><p>mysql &gt; select version();</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><hr>
+<h3 id="1-查看mysql编译参数"><a href="#1-查看mysql编译参数" class="headerlink" title="1. 查看mysql编译参数"></a>1. 查看mysql编译参数</h3><p>cat /usr/local/mysql/bin/mysqlbug |grep ./configure</p>
+<h3 id="2-查看mysql默认编码"><a href="#2-查看mysql默认编码" class="headerlink" title="2. 查看mysql默认编码"></a>2. 查看mysql默认编码</h3><p>mysql &gt; SHOW VARIABLES LIKE ‘character<em>set</em>%’;</p>
 
       
     </div>
@@ -890,7 +714,7 @@ mysql -u root -p –s">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速清空表，利用SQL语句清空了该数据表，而不保留日志"><span class="nav-number">1.</span> <span class="nav-text">快速清空表，利用SQL语句清空了该数据表，而不保留日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#或者"><span class="nav-number">2.</span> <span class="nav-text">或者</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导出全库到一个文件"><span class="nav-number">3.</span> <span class="nav-text">导出全库到一个文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#或者同时进入2个库，同时执行"><span class="nav-number">4.</span> <span class="nav-text">或者同时进入2个库，同时执行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录"><span class="nav-number">1.</span> <span class="nav-text">登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-登录使用默认3306端口的MySQL"><span class="nav-number">1.1.</span> <span class="nav-text">1. 登录使用默认3306端口的MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）"><span class="nav-number">1.2.</span> <span class="nav-text">2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-通过socket套接字管理不同端口的多个MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">3. 通过socket套接字管理不同端口的多个MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-通过端口和IP管理不同端口的多个MySQL"><span class="nav-number">1.4.</span> <span class="nav-text">4. 通过端口和IP管理不同端口的多个MySQL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库操作SQL语句"><span class="nav-number">2.</span> <span class="nav-text">数据库操作SQL语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-显示Mysql所有数据库"><span class="nav-number">2.1.</span> <span class="nav-text">1. 显示Mysql所有数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-创建名称为test的数据库"><span class="nav-number">2.2.</span> <span class="nav-text">2. 创建名称为test的数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-删除名称为test的数据库"><span class="nav-number">2.3.</span> <span class="nav-text">3. 删除名称为test的数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-选择test数据库"><span class="nav-number">2.4.</span> <span class="nav-text">4. 选择test数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作SQL语句"><span class="nav-number">3.</span> <span class="nav-text">表操作SQL语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-显示当前数据库中存在什么表"><span class="nav-number">3.1.</span> <span class="nav-text">1. 显示当前数据库中存在什么表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-创建数据库表user：在mysql-gt-后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。"><span class="nav-number">3.2.</span> <span class="nav-text">2. 创建数据库表user：在mysql>后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查看user表结构"><span class="nav-number">3.3.</span> <span class="nav-text">3. 查看user表结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从表中检索信息"><span class="nav-number">4.</span> <span class="nav-text">从表中检索信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-从user表中检索所有记录"><span class="nav-number">4.1.</span> <span class="nav-text">1. 从user表中检索所有记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-从user表中检索特定的行"><span class="nav-number">4.2.</span> <span class="nav-text">2. 从user表中检索特定的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-从user表中检索指定的字段"><span class="nav-number">4.3.</span> <span class="nav-text">3. 从user表中检索指定的字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-从user表中检索出唯一的不重复记录"><span class="nav-number">4.4.</span> <span class="nav-text">4. 从user表中检索出唯一的不重复记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-插入信息到user表"><span class="nav-number">4.5.</span> <span class="nav-text">5. 插入信息到user表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-更新user表中的指定信息"><span class="nav-number">4.6.</span> <span class="nav-text">6. 更新user表中的指定信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-删除user表中的指定信息"><span class="nav-number">4.7.</span> <span class="nav-text">7. 删除user表中的指定信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-清空user表"><span class="nav-number">4.8.</span> <span class="nav-text">8. 清空user表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-快速清空表"><span class="nav-number">4.9.</span> <span class="nav-text">9. 快速清空表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-删除user表"><span class="nav-number">4.10.</span> <span class="nav-text">10.删除user表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-更改表结构"><span class="nav-number">4.11.</span> <span class="nav-text">11.更改表结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-将当前目录下的mysql-sql导入数据库"><span class="nav-number">4.12.</span> <span class="nav-text">12.将当前目录下的mysql.sql导入数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表引擎"><span class="nav-number">5.</span> <span class="nav-text">表引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看引擎"><span class="nav-number">5.1.</span> <span class="nav-text">1. 查看引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-转换引擎："><span class="nav-number">5.2.</span> <span class="nav-text">2. 转换引擎：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表索引"><span class="nav-number">6.</span> <span class="nav-text">表索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-普通索引"><span class="nav-number">6.1.</span> <span class="nav-text">1. 普通索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、聚合索引"><span class="nav-number">6.2.</span> <span class="nav-text">2、聚合索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触发器"><span class="nav-number">7.</span> <span class="nav-text">触发器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看触发器语句"><span class="nav-number">7.1.</span> <span class="nav-text">1. 查看触发器语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查看表的触发器"><span class="nav-number">7.2.</span> <span class="nav-text">2. 查看表的触发器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql用户管理"><span class="nav-number">8.</span> <span class="nav-text">mysql用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-mysql修改密码"><span class="nav-number">8.1.</span> <span class="nav-text">1. mysql修改密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用下面语句生成加密密码，之后修改密码为加密后的密码"><span class="nav-number">8.2.</span> <span class="nav-text">2. 使用下面语句生成加密密码，之后修改密码为加密后的密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用update语句-密码同样为加密后的密码"><span class="nav-number">8.3.</span> <span class="nav-text">3. 使用update语句,密码同样为加密后的密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限操作SQL语句"><span class="nav-number">9.</span> <span class="nav-text">权限操作SQL语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看用户信息"><span class="nav-number">9.1.</span> <span class="nav-text">1. 查看用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-创建一个具有root权限，可从任何IP登录的用户leon，密码为123456"><span class="nav-number">9.2.</span> <span class="nav-text">2. 创建一个具有root权限，可从任何IP登录的用户leon，密码为123456</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建一个具有“数据操作”、“结构操作”权限，只能从192-168-1-登录的用户leon，密码为123456"><span class="nav-number">9.3.</span> <span class="nav-text">3. 创建一个具有“数据操作”、“结构操作”权限，只能从192.168.1.*登录的用户leon，密码为123456</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-创建一个只拥有“数据操作”权限，只能从192-168-1-24登录，只能操作test数据库的user表的用户leon，密码为123456"><span class="nav-number">9.4.</span> <span class="nav-text">4. 创建一个只拥有“数据操作”权限，只能从192.168.1.24登录，只能操作test数据库的user表的用户leon，密码为123456</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456"><span class="nav-number">9.5.</span> <span class="nav-text">5. 创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-创建一个拥有“数据查询”权限，可以从192-168-0-10登陆，只能查询table1和table2表的用户query，密码是zbcx-123456"><span class="nav-number">9.6.</span> <span class="nav-text">6. 创建一个拥有“数据查询”权限，可以从192.168.0.10登陆，只能查询table1和table2表的用户query，密码是zbcx*123456</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-删除用户"><span class="nav-number">9.7.</span> <span class="nav-text">7. 删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-去除用户权限"><span class="nav-number">9.8.</span> <span class="nav-text">8. 去除用户权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-查看用户权限"><span class="nav-number">9.9.</span> <span class="nav-text">9. 查看用户权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL备份"><span class="nav-number">10.</span> <span class="nav-text">MySQL备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-混合引擎"><span class="nav-number">10.1.</span> <span class="nav-text">1. 混合引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-导出全库到一个文件"><span class="nav-number">10.2.</span> <span class="nav-text">2. 导出全库到一个文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主从复制"><span class="nav-number">11.</span> <span class="nav-text">##主从复制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看从库命令："><span class="nav-number">11.1.</span> <span class="nav-text">1. 查看从库命令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-校验主从表"><span class="nav-number">11.2.</span> <span class="nav-text">2. 校验主从表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看mysql版本"><span class="nav-number">11.3.</span> <span class="nav-text">查看mysql版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">11.4.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2"><span class="nav-number">11.5.</span> <span class="nav-text">方法2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法3"><span class="nav-number">11.6.</span> <span class="nav-text">方法3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法4"><span class="nav-number">11.7.</span> <span class="nav-text">方法4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">12.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看mysql编译参数"><span class="nav-number">12.1.</span> <span class="nav-text">1. 查看mysql编译参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查看mysql默认编码"><span class="nav-number">12.2.</span> <span class="nav-text">2. 查看mysql默认编码</span></a></li></ol></li></ol></div>
             
 
           </div>
