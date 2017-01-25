@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="Windows," />
 
 
 
@@ -86,22 +86,25 @@
 
 
 
-<meta name="description" content="错误1123rsync: read error: Connection reset by peer (104)rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]
-解决：很大可能是服务器端没有开启 rsync 服务。开启服务。
-错误2123@ERROR: chdir fail">
+<meta name="description" content="简介适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上
+下载下载地址：
+http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip
+将Server或者Client软件安装到服务器端和客户端服务器上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rsync问题排查">
-<meta property="og:url" content="http://weihoop.com/2010/01/26/rsync-error/index.html">
+<meta property="og:title" content="cwRsync-Window服务器同步方案">
+<meta property="og:url" content="http://weihoop.com/2010/02/17/cwrsync-window/index.html">
 <meta property="og:site_name" content="Weihoop's Blog">
-<meta property="og:description" content="错误1123rsync: read error: Connection reset by peer (104)rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]
-解决：很大可能是服务器端没有开启 rsync 服务。开启服务。
-错误2123@ERROR: chdir fail">
-<meta property="og:updated_time" content="2017-01-25T20:01:57.000Z">
+<meta property="og:description" content="简介适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上
+下载下载地址：
+http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip
+将Server或者Client软件安装到服务器端和客户端服务器上">
+<meta property="og:updated_time" content="2017-01-25T20:12:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rsync问题排查">
-<meta name="twitter:description" content="错误1123rsync: read error: Connection reset by peer (104)rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]
-解决：很大可能是服务器端没有开启 rsync 服务。开启服务。
-错误2123@ERROR: chdir fail">
+<meta name="twitter:title" content="cwRsync-Window服务器同步方案">
+<meta name="twitter:description" content="简介适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上
+下载下载地址：
+http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip
+将Server或者Client软件安装到服务器端和客户端服务器上">
 
 
 
@@ -129,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://weihoop.com/2010/01/26/rsync-error/"/>
+  <link rel="canonical" href="http://weihoop.com/2010/02/17/cwrsync-window/"/>
 
 
 
 
 
-  <title> Rsync问题排查 | Weihoop's Blog </title>
+  <title> cwRsync-Window服务器同步方案 | Weihoop's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -306,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://weihoop.com/2010/01/26/rsync-error/">
+  <link itemprop="mainEntityOfPage" href="http://weihoop.com/2010/02/17/cwrsync-window/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="weihoop">
@@ -330,7 +333,7 @@
             
             
               
-                Rsync问题排查
+                cwRsync-Window服务器同步方案
               
             
           </h1>
@@ -345,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2010-01-26T12:50:47+08:00">
-                2010-01-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2010-02-17T02:59:49+08:00">
+                2010-02-17
               </time>
             
 
@@ -364,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2010/01/26/rsync-error/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2010/01/26/rsync-error/" itemprop="commentCount"></span>
+                <a href="/2010/02/17/cwrsync-window/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2010/02/17/cwrsync-window/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -375,7 +378,7 @@
 
           
           
-             <span id="/2010/01/26/rsync-error/" class="leancloud_visitors" data-flag-title="Rsync问题排查">
+             <span id="/2010/02/17/cwrsync-window/" class="leancloud_visitors" data-flag-title="cwRsync-Window服务器同步方案">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,31 +405,36 @@
       
 
       
-        <h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rsync: <span class="built_in">read</span> error: Connection reset by peer (104)</div><div class="line">rsync error: error <span class="keyword">in</span> rsync protocol data stream (code 12) at io.c(794) [receive</div><div class="line">r=3.0.2]</div></pre></td></tr></table></figure>
-<p>解决：很大可能是服务器端没有开启 rsync 服务。开启服务。</p>
-<h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@ERROR: chdir failed</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec</div><div class="line">eiver=3.0.2]</div></pre></td></tr></table></figure>
-<p>解决：服务器端同步目录没有权限，cwrsync默认用户是Svcwrsync。为同步目录添加用户Svcwrsync权限。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载地址：</p>
+<p><a href="http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip" target="_blank" rel="external">http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip</a></p>
+<p>将Server或者Client软件安装到服务器端和客户端服务器上，Server包含Client软件所以只安装Server软件即可。</p>
 <a id="more"></a>
-<h3 id="错误3"><a href="#错误3" class="headerlink" title="错误3"></a>错误3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@ERROR: failed to open lock file</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec</div><div class="line">eiver=3.0.2]</div></pre></td></tr></table></figure>
-<p>解决：配置文件 rsync.conf中添加 lock file = rsyncd.lock 即可解决</p>
-<h3 id="错误4"><a href="#错误4" class="headerlink" title="错误4"></a>错误4</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rsync: could not open password file “/etc/rsync.pas”: No such file or directory (2)</div><div class="line">Password:</div><div class="line">@ERROR: auth failed on module backup</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1506) [Receiver=3.0.7]</div></pre></td></tr></table></figure>
-<p>解决：client端没有设置/etc/rsync.pas这个文件，而在使用rsync命令的时候，加了这个参数–password-file=/etc/rsync.pas</p>
-<h3 id="错误5"><a href="#错误5" class="headerlink" title="错误5"></a>错误5</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@ERROR: auth failed on module backup</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1506) [Receiver=3.0.7]</div></pre></td></tr></table></figure>
-<p>解决：client端已经设置/etc/rsync.pas这个文件，里面也设置了密码111111，和服务器一致，但是服务器段设置有错误，服务器端应该设置/etc/rsync.pas  ，里面内容root:111111 ,这里登陆名不可缺少</p>
-<h3 id="错误6"><a href="#错误6" class="headerlink" title="错误6"></a>错误6</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@ERROR: chdir failed</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1506) [Receiver=3.0.7]</div></pre></td></tr></table></figure>
-<p>解决：服务器端的/data/backup  其中backup这个目录并没有设置，所以提示：chdir failed</p>
-<h3 id="错误7"><a href="#错误7" class="headerlink" title="错误7"></a>错误7</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rsync: write failed on “/data/backup”: No space left on device (28)</div><div class="line">rsync error: error in file IO (code 11) at receiver.c(302) [receiver=3.0.7]</div></pre></td></tr></table></figure>
-<p>解决：磁盘空间不够，所以无法操作。</p>
-<h3 id="错误8"><a href="#错误8" class="headerlink" title="错误8"></a>错误8</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync: opendir “/kexue” (in dtsChannel) failed: Permission denied (13)</div></pre></td></tr></table></figure>
-<p>解决：注意查看同步的目录权限是否为755</p>
-<h3 id="错误9"><a href="#错误9" class="headerlink" title="错误9"></a>错误9</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rsync: failed to connect to 203.100.192.66: Connection timed out (110)</div><div class="line">rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.5]</div></pre></td></tr></table></figure>
-<p>解决：连接时间超时，检查服务器的端口netstat –tunlp，远程telnet测试。</p>
-<h3 id="错误10"><a href="#错误10" class="headerlink" title="错误10"></a>错误10</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rsync: failed to connect to 10.10.10.170: Connection refused (111)</div><div class="line">rsync error: error in socket IO (code 10) at clientserver.c(124) [receiver=3.0.5]</div></pre></td></tr></table></figure>
-<p>解决：rsync服务未启动，启动rsync服务：rsync –daemon –config=/etc/rsyncd.conf</p>
-<h3 id="错误11"><a href="#错误11" class="headerlink" title="错误11"></a>错误11</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rsync error: received SIGINT, SIGTERM, or SIGHUP (code 20) at rsync.c(544) [receiver=3.0.5]</div><div class="line">rsync error: received SIGINT, SIGTERM, or SIGHUP (code 20) at rsync.c(544) [generator=3.0.5]</div></pre></td></tr></table></figure>
-<p>解决：Ctrl+C或者大量文件</p>
-<h3 id="错误12"><a href="#错误12" class="headerlink" title="错误12"></a>错误12</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rsync: read error: Connection reset by peer (104)</div><div class="line">rsync error: error in rsync protocol data stream (code 12) at io.c(759) [receiver=3.0.5]</div></pre></td></tr></table></figure>
-<p>解决：查看rsync日志<br>rsync: unable to open configuration file “/etc/rsyncd.conf”: No such file or directory<br>xnetid查找的配置文件位置默认是/etc下，根据具体情况创建软链接。例如：<br>ln -s /etc/rsyncd/rsyncd.conf /etc/rsyncd.conf<br>或者更改指定默认的配置文件路径，在/etc/xinetd.d/rsync配置文件中.</p>
+<h2 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h2><p>服务端IP: 10.0.101.174</p>
+<h3 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h3><p>编写文件: C:\Program Files\ICW\rsyncd.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">uid = 0</div><div class="line">gid = 0</div><div class="line">use chroot = false</div><div class="line">strict modes = false</div><div class="line">read only = yes</div><div class="line">list = no</div><div class="line">hosts allow = *</div><div class="line">max connections = 3</div><div class="line">secrets file = rsyncd.secrets     #指定用户登录的密码文件</div><div class="line">motd file = rsyncd.motd           #连接上rsync server时显示的欢迎信息</div><div class="line">log file = rsyncd.log</div><div class="line">pid file = rsyncd.pid</div><div class="line">transfer logging = yes</div><div class="line"># Module definitions</div><div class="line"># Remember cygwin naming conventions : c:/work becomes /cygwin/c/work</div><div class="line"></div><div class="line">[test]</div><div class="line">path = /cygdrive/c/work</div><div class="line">read only = false</div><div class="line">transfer logging = yes</div><div class="line"></div><div class="line">[cwrsync]</div><div class="line">path = /cygdrive/d/rsyncfile</div><div class="line">read only = false</div><div class="line">auth users = test</div><div class="line">secrets file= /cygdrive/c/Program Files/icw/rsyncd.passwd</div><div class="line">transfer logging = yes</div></pre></td></tr></table></figure>
+<h3 id="2-建立密码文件"><a href="#2-建立密码文件" class="headerlink" title="2. 建立密码文件"></a>2. 建立密码文件</h3><p>在C:\Program Files\ICW目录下新建密码文件 rsyncd.passwd 内容为用户名密码，如: test:test</p>
+<h2 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h2><h3 id="1-Windows客户端"><a href="#1-Windows客户端" class="headerlink" title="1. Windows客户端"></a>1. Windows客户端</h3><p>在cmd命令下执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;C:\Program Files\icw\bin\chmod.exe” 600 “/cygdrive/C/Program Files/icw/rsyncd.passwd&quot;</div></pre></td></tr></table></figure>
+<p>CMD 下输入下面命令即可同步服务器端cwrsync模块到客户端d:/rsyncfile目录下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">“C:\Program Files\ICW/bin/rsync.exe” -vzrtopg –progress –password-file=”/cygdrive/C/Program Files/icw/rsyncd.passwd” test@10.0.101.174::cwrsync /cygdrive/d/rsyncfile</div><div class="line">“C:\Program Files\icw\bin\rsync” -vzrtopg –progress –password-file=”/cygdrive/C/Program Files/icw/rsync.passwd” test@10.0.101.174::cwrsync /cygdrive/d/rsyncfile</div></pre></td></tr></table></figure>
+<p>如果没有同步，可以使用下面方法排除故障</p>
+<ul>
+<li>检查服务器是否有开服务端口，命令行输入( netstat -a ) 可查看服务器开的端口。就是上面的36536端口。</li>
+<li>客户端命令行输入( telnet 服务端ip 服务端口 ) 能否连接服务器端。3.检查配置文件是否跟上面一样。</li>
+</ul>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>以上为匿名连接入服务器端，一般会在模块里添加 auth user= administrator 指定用户，一定要注意，指定的用户必须要登陆才能进行同步服务。</p>
+<h3 id="2-linux客户端"><a href="#2-linux客户端" class="headerlink" title="2. linux客户端"></a>2. linux客户端</h3><p>输入下面命令进行同步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -vzrtopg –password-file=/etc/cwrsync.pass –progress cwsync@10.0.101.174::test  /rsyncfile</div></pre></td></tr></table></figure>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync: read error: Connection reset by peer (104) rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]</div></pre></td></tr></table></figure>
+<p>解决：很大可能是服务器端没有开启 rsync 服务。开启服务。</p>
+<h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@ERROR: chdir failed rsync error: error starting client-server protocol (code 5) at main.c(1495) [receiver=3.0.2]</div></pre></td></tr></table></figure>
+<p>解决：服务器端同步目录没有权限，cwrsync默认用户是Svcwrsync。为同步目录添加用户Svcwrsync权限。</p>
+<h3 id="错误3"><a href="#错误3" class="headerlink" title="错误3"></a>错误3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@ERROR: failed to open lock file rsync error: error starting client-server protocol (code 5) at main.c(1495) [receiver=3.0.2]</div></pre></td></tr></table></figure>
+<p>解决：配置文件 rsync.conf中添加 lock file = rsyncd.lock 即可解决。 </p>
+<h3 id="错误4"><a href="#错误4" class="headerlink" title="错误4"></a>错误4</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@ERROR: invalid uid nobody</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1506) [Receiver=3.0.7]</div></pre></td></tr></table></figure>
+<p>解决：在rsyncd.conf文件中添加下面两行即可解决问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">uid = 0</div><div class="line">gid = 0</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -450,7 +458,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
           
         </div>
       
@@ -459,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2009/11/02/mysql-cmd/" rel="next" title="MySQL常用命令">
-                <i class="fa fa-chevron-left"></i> MySQL常用命令
+              <a href="/2010/01/26/rsync-error/" rel="next" title="Rsync问题排查">
+                <i class="fa fa-chevron-left"></i> Rsync问题排查
               </a>
             
           </div>
@@ -469,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2010/02/17/cwrsync-window/" rel="prev" title="cwRsync-Window服务器同步方案">
-                cwRsync-Window服务器同步方案 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/01/22/sublime快捷键/" rel="prev" title="Sublime快捷键">
+                Sublime快捷键 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -520,8 +528,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2010/01/26/rsync-error/"
-           data-title="Rsync问题排查" data-url="http://weihoop.com/2010/01/26/rsync-error/">
+      <div class="ds-thread" data-thread-key="2010/02/17/cwrsync-window/"
+           data-title="cwRsync-Window服务器同步方案" data-url="http://weihoop.com/2010/02/17/cwrsync-window/">
       </div>
     
   </div>
@@ -667,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误1"><span class="nav-number">1.</span> <span class="nav-text">错误1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误2"><span class="nav-number">2.</span> <span class="nav-text">错误2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误3"><span class="nav-number">3.</span> <span class="nav-text">错误3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误4"><span class="nav-number">4.</span> <span class="nav-text">错误4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误5"><span class="nav-number">5.</span> <span class="nav-text">错误5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误6"><span class="nav-number">6.</span> <span class="nav-text">错误6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误7"><span class="nav-number">7.</span> <span class="nav-text">错误7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误8"><span class="nav-number">8.</span> <span class="nav-text">错误8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误9"><span class="nav-number">9.</span> <span class="nav-text">错误9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误10"><span class="nav-number">10.</span> <span class="nav-text">错误10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误11"><span class="nav-number">11.</span> <span class="nav-text">错误11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误12"><span class="nav-number">12.</span> <span class="nav-text">错误12</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端配置"><span class="nav-number">3.</span> <span class="nav-text">服务器端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改配置文件"><span class="nav-number">3.1.</span> <span class="nav-text">1. 修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-建立密码文件"><span class="nav-number">3.2.</span> <span class="nav-text">2. 建立密码文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端使用"><span class="nav-number">4.</span> <span class="nav-text">客户端使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Windows客户端"><span class="nav-number">4.1.</span> <span class="nav-text">1. Windows客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">4.1.1.</span> <span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-linux客户端"><span class="nav-number">4.2.</span> <span class="nav-text">2. linux客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">5.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误1"><span class="nav-number">5.1.</span> <span class="nav-text">错误1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误2"><span class="nav-number">5.2.</span> <span class="nav-text">错误2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误3"><span class="nav-number">5.3.</span> <span class="nav-text">错误3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误4"><span class="nav-number">5.4.</span> <span class="nav-text">错误4</span></a></li></ol></li></ol></div>
             
 
           </div>
