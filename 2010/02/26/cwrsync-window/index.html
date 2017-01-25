@@ -87,21 +87,21 @@
 
 
 <meta name="description" content="简介适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上
-下载下载地址：http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip
-将Server或者Client软件安装到服务器端和客户端服务器上，">
+下载下载地址：
+http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip将Server或者Client软件安装到服务器端和客户端服务器上，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cwRsync-Window服务器同步方案">
 <meta property="og:url" content="http://weihoop.com/2010/02/26/cwrsync-window/index.html">
 <meta property="og:site_name" content="Weihoop's Blog">
 <meta property="og:description" content="简介适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上
-下载下载地址：http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip
-将Server或者Client软件安装到服务器端和客户端服务器上，">
-<meta property="og:updated_time" content="2017-01-25T19:07:58.000Z">
+下载下载地址：
+http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip将Server或者Client软件安装到服务器端和客户端服务器上，">
+<meta property="og:updated_time" content="2017-01-25T19:09:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cwRsync-Window服务器同步方案">
 <meta name="twitter:description" content="简介适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上
-下载下载地址：http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip
-将Server或者Client软件安装到服务器端和客户端服务器上，">
+下载下载地址：
+http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip将Server或者Client软件安装到服务器端和客户端服务器上，">
 
 
 
@@ -403,8 +403,8 @@
 
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载地址：<a href="http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip" target="_blank" rel="external">http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip</a></p>
-<p>将Server或者Client软件安装到服务器端和客户端服务器上，Server包含Client软件所以只安装Server软件即可。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载地址：</p>
+<p><code>http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip</code><br>将Server或者Client软件安装到服务器端和客户端服务器上，Server包含Client软件所以只安装Server软件即可。</p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h3><p>服务端IP: 10.0.101.174</p>
 <h4 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h4><p>编写文件: C:\Program Files\ICW\rsyncd.conf</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">uid = 0</div><div class="line">gid = 0</div><div class="line">use chroot = false</div><div class="line">strict modes = false</div><div class="line">read only = yes</div><div class="line">list = no</div><div class="line">hosts allow = *</div><div class="line">max connections = 3</div><div class="line">secrets file = rsyncd.secrets     #指定用户登录的密码文件</div><div class="line">motd file = rsyncd.motd           #连接上rsync server时显示的欢迎信息</div><div class="line">log file = rsyncd.log</div><div class="line">pid file = rsyncd.pid</div><div class="line">transfer logging = yes</div><div class="line"># Module definitions</div><div class="line"># Remember cygwin naming conventions : c:/work becomes /cygwin/c/work</div><div class="line"></div><div class="line">[test]</div><div class="line">path = /cygdrive/c/work</div><div class="line">read only = false</div><div class="line">transfer logging = yes</div><div class="line"></div><div class="line">[cwrsync]</div><div class="line">path = /cygdrive/d/rsyncfile</div><div class="line">read only = false</div><div class="line">auth users = test</div><div class="line">secrets file= /cygdrive/c/Program Files/icw/rsyncd.passwd</div><div class="line">transfer logging = yes</div></pre></td></tr></table></figure>
