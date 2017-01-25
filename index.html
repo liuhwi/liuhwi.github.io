@@ -917,6 +917,364 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://weihoop.com/2009/11/02/mysql-cmd/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="weihoop">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Weihoop's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Weihoop's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2009/11/02/mysql-cmd/" itemprop="url">
+                  mysql-cmd
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2009-11-02T12:31:02+08:00">
+                2009-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2009/11/02/mysql-cmd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2009/11/02/mysql-cmd/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2009/11/02/mysql-cmd/" class="leancloud_visitors" data-flag-title="mysql-cmd">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>登录MySQL</p>
+<hr>
+<ol>
+<li>登录使用默认3306端口的MySQL</li>
+</ol>
+<p>mysql -u root -p</p>
+<ol>
+<li>通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</li>
+</ol>
+<p>mysql -u root -p –protocol=tcp –host=localhost –port=3307</p>
+<ol>
+<li>通过socket套接字管理不同端口的多个MySQL</li>
+</ol>
+<p>mysql -u root -p –socket=/tmp/mysql3307.sock</p>
+<ol>
+<li>通过端口和IP管理不同端口的多个MySQL</li>
+</ol>
+<p>mysql -u root -p -P 3306 -h 127.0.0.1</p>
+<hr>
+<p>数据库操作SQL语句</p>
+<hr>
+<ol>
+<li>显示Mysql所有数据库</li>
+</ol>
+<p>mysql &gt; SHOW DATABASES;</p>
+<ol>
+<li>创建名称为test的数据库</li>
+</ol>
+<p>mysql &gt; CREATE DATABASE test;</p>
+<ol>
+<li><p>删除名称为test的数据库<br>mysql &gt; DROP DATABASE test;</p>
+</li>
+<li><p>选择test数据库<br> mysql &gt; USE test;</p>
+</li>
+</ol>
+<hr>
+<p>表操作SQL语句</p>
+<hr>
+<ol>
+<li>显示当前数据库中存在什么表</li>
+</ol>
+<p>mysql &gt; SHOW TABLES;</p>
+<ol>
+<li>创建数据库表user：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。</li>
+</ol>
+<p>mysql &gt; CREATE TABLE <code>spitfire</code> (<br><code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT,<br><code>username</code> VARCHAR( 20 ) NOT NULL,<br><code>password</code> CHAR( 32 ) NOT NULL,<br><code>time</code> DATETIME NOT NULL,<br><code>number</code> FLOAT( 10 ) NOT NULL,<br><code>content</code> TEXT NOT NULL,<br>PRIMARY KEY (<code>id</code>)<br>) ENGINE = INNODB ;</p>
+<p>INSERT INTO <code>spitfire</code> (<code>id</code>, <code>username</code>, <code>password</code>, <code>time</code>, <code>number</code>) VALUES (’1′, ‘lhw’, ’123456′, ’2011-1-1′, 8888);</p>
+<ol>
+<li>查看user表结构</li>
+</ol>
+<p>mysql &gt; DESCRIBE user;</p>
+<hr>
+<p>从表中检索信息</p>
+<hr>
+<ol>
+<li>从user表中检索所有记录</li>
+</ol>
+<p>mysql &gt; SELECT * FROM user;</p>
+<ol>
+<li>从user表中检索特定的行：字段username等于abc，字段number等于1，按字段id降序排列</li>
+</ol>
+<p>mysql &gt; SELECT * FROM user WHERE username = ‘abc’ AND number=’1′ ORDER BY id DESC;</p>
+<ol>
+<li>从user表中检索指定的字段：username和password</li>
+</ol>
+<p>mysql &gt; SELECT username, password FROM zhangyan;</p>
+<ol>
+<li>从user表中检索出唯一的不重复记录：</li>
+</ol>
+<p>mysql &gt; SELECT DISTINCT username FROM user;</p>
+<ol>
+<li>插入信息到user表</li>
+</ol>
+<p>mysql &gt;</p>
+<ol>
+<li>更新user表中的指定信息</li>
+</ol>
+<p>mysql &gt; UPDATE user SET content = ‘hello china’ WHERE username = ‘abc’;</p>
+<ol>
+<li>删除user表中的指定信息</li>
+</ol>
+<p>mysql &gt; DELETE FROM user WHERE id = 1;</p>
+<ol>
+<li>清空user表</li>
+</ol>
+<p>mysql &gt; DELETE FROM user;</p>
+<h1 id="快速清空表，利用SQL语句清空了该数据表，而不保留日志"><a href="#快速清空表，利用SQL语句清空了该数据表，而不保留日志" class="headerlink" title="快速清空表，利用SQL语句清空了该数据表，而不保留日志"></a>快速清空表，利用SQL语句清空了该数据表，而不保留日志</h1><p>mysql &gt; TRUNCATE TABLE TableName</p>
+<p>10.删除user表</p>
+<p>mysql &gt; DROP TABLE user;</p>
+<p>11.更改表结构，将user表username字段的字段类型改为CHAR(25)</p>
+<p>mysql &gt; ALTER TABLE user CHANGE username username CHAR(25);</p>
+<p>12.将当前目录下的mysql.sql导入数据库</p>
+<p>mysql &gt; SOURCE ./mysql.sql;</p>
+<hr>
+<p>表引擎</p>
+<hr>
+<ol>
+<li>查看引擎</li>
+</ol>
+<p>mysql &gt; show table status like ‘TableName’\G;<br>mysql &gt; show table status from tablename; # 这条最直接<br>mysql &gt; show create table tablename;<br>mysql -uroot -p -e “show table status” -D DBname|sed ’1d’ | awk ‘{print $1″ “$2}’<br>mysql -uroot -p123456 -e “show table status from dc\G;”  | grep -ie “Name” -ie “Engine”</p>
+<p>2、转换引擎：</p>
+<p>mysql &gt; ALTER TABLE <code>table_name</code> ENGINE=MyISAM;</p>
+<hr>
+<p>表索引</p>
+<hr>
+<ol>
+<li>普通索引</li>
+</ol>
+<p>mysql &gt; ALTER TABLE <code>DBname</code>.<code>TableName</code> ADD INDEX <code>user_add_date</code> (<code>user_add_date</code>);</p>
+<p>2、聚合索引</p>
+<p>mysql &gt; ALTER TABLE <code>DBname</code>.<code>TableName</code> ADD INDEX <code>user_channel</code> (<code>user_channel</code>, <code>user_from_site</code>);</p>
+<p>chown mysql.mysql  g5_users.*</p>
+<hr>
+<p>触发器</p>
+<hr>
+<ol>
+<li>查看触发器语句</li>
+</ol>
+<p>mysql&gt; show CREATE TRIGGER tablesname\G;</p>
+<h1 id="或者"><a href="#或者" class="headerlink" title="或者"></a>或者</h1><p>mysql&gt; use dbname<br>mysql&gt; SHOW TRIGGERS;</p>
+<ol>
+<li>查看表的触发器：</li>
+</ol>
+<p>mysql&gt; SHOW TRIGGERS FROM tablename\G;</p>
+<hr>
+<p>mysql用户管理</p>
+<hr>
+<ol>
+<li>mysql修改密码</li>
+</ol>
+<p>mysqladmin -uroot -p”oldpwd” password “newpwd”</p>
+<ol>
+<li>使用下面语句生成加密密码，之后修改密码为加密后的密码</li>
+</ol>
+<p>mysql&gt; SELECT PASSWORD(‘PAWD’);<br>mysql&gt; SET PASSWORD FOR spitfire@”%” = PAWD；</p>
+<ol>
+<li>使用update语句,密码同样为加密后的密码</li>
+</ol>
+<p>mysql&gt; UPDATE USER SET password=”newpwd” WHERE user=root and host=localhost;<br>mysql&gt; FLUSH PRIVILEGES;</p>
+<hr>
+<p>权限操作SQL语句</p>
+<hr>
+<ol>
+<li>查看用户信息</li>
+</ol>
+<p>mysql -uroot -p -e “use mysql;select user,host from user”</p>
+<ol>
+<li>创建一个具有root权限，可从任何IP登录的用户leon，密码为123456</li>
+</ol>
+<p>mysql &gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘leon’@’%’ IDENTIFIED BY ’123456′;</p>
+<ol>
+<li>创建一个具有“数据操作”、“结构操作”权限，只能从192.168.1.<em>*</em>登录的用户leon，密码为123456</li>
+</ol>
+<p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE , FILE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON <em>.</em> TO ‘leon’@’192.168.1.%’ IDENTIFIED BY ’123456′;</p>
+<ol>
+<li>创建一个只拥有“数据操作”权限，只能从192.168.1.24登录，只能操作test数据库的user表的用户leon，密码为123456</li>
+</ol>
+<p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE ON  test.user TO ‘leon’@’192.168.1.24′ IDENTIFIED BY ’123456′;</p>
+<ol>
+<li>创建一个拥有“数据操作”、“结构操作”权限，可从任何IP登录，只能操作test数据库的用户leon，密码为123456</li>
+</ol>
+<p>mysql &gt; GRANT SELECT , INSERT , UPDATE , DELETE , CREATE , DROP , INDEX , ALTER , CREATE TEMPORARY TABLES , CREATE VIEW , SHOW VIEW , CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON test.* TO ‘leon’@’%’ IDENTIFIED BY ’123456′;</p>
+<ol>
+<li>创建一个拥有“数据查询”权限，可以从192.168.0.10登陆，只能查询table1和table2表的用户query，密码是zbcx*123456#</li>
+</ol>
+<p>mysql &gt; GRANT SELECT  ON table1.<em> TO ‘query’@’192.168.0.10′ IDENTIFIED BY ‘zbcx</em>123456#’;<br>mysql &gt; GRANT SELECT  ON table1.<em> TO ‘query’@’192.168.0.10′ IDENTIFIED BY ‘zbcx</em>123456#’;</p>
+<ol>
+<li>删除用户</li>
+</ol>
+<p>mysql &gt; DROP USER ‘spitfire’@’%’;</p>
+<ol>
+<li>去除用户权限</li>
+</ol>
+<p>mysql &gt; REVOKE ALL PRIVILEGES ON <em>.</em> from ‘query’@’192.168.0.%’;<br>mysql &gt; REVOKE GRANT OPTION  ON <em>.</em> from ‘query’@’192.168.1.%’;</p>
+<ol>
+<li>查看用户权限</li>
+</ol>
+<p>mysql &gt; show grants for root@’localhost’;</p>
+<hr>
+<p>MySQL备份</p>
+<hr>
+<ol>
+<li>混合引擎</li>
+</ol>
+<p>mysqldump -uroot -p –default-character-set=utf8 –opt –lock-all-tables db_name &gt; db_name.sql</p>
+<h1 id="导出全库到一个文件"><a href="#导出全库到一个文件" class="headerlink" title="导出全库到一个文件"></a>导出全库到一个文件</h1><p>mysqldump -uroot -p –default-character-set=utf8 –lock-all-tables –flush-logs –all-databases  &gt; x.sql<br>mysqldump -uroot -p –default-character-set=utf8 –hex-blob –routines –lock-all-tables database &gt; /tmp/database.sql</p>
+<hr>
+<p>主从复制</p>
+<hr>
+<ol>
+<li>查看从库命令：</li>
+</ol>
+<p>mysql -uroot -p -e “select HOST from information_schema.PROCESSLIST where STATE like ‘%slave%’;”</p>
+<ol>
+<li>校验主从表</li>
+</ol>
+<p>mk-table-checksum h=192.168.0.1,u=root,p=xxx h=192.168.0.2,u=root,p=xxx -d test -t test</p>
+<h1 id="或者同时进入2个库，同时执行"><a href="#或者同时进入2个库，同时执行" class="headerlink" title="或者同时进入2个库，同时执行"></a>或者同时进入2个库，同时执行</h1><p>mysql&gt;select conunt(*) from test;<br>mysql&gt;checksum table table_name;</p>
+<hr>
+<p>查看mysql版本</p>
+<hr>
+<ol>
+<li>mysql -V</li>
+<li>mysql &gt; status;</li>
+<li>mysql –help | grep Distrib</li>
+<li>mysql &gt; select version();</li>
+</ol>
+<hr>
+<p>其它mysql信息查看</p>
+<hr>
+<ol>
+<li>查看mysql编译参数</li>
+</ol>
+<p>cat /usr/local/mysql/bin/mysqlbug |grep ./configure</p>
+<ol>
+<li>查看mysql默认编码</li>
+</ol>
+<p>mysql &gt; SHOW VARIABLES LIKE ‘character<em>set</em>%’;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -960,7 +1318,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -971,7 +1329,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
