@@ -267,16 +267,17 @@
     <link href="http://weihoop.com/2009/08/02/memory-size-exhausted/"/>
     <id>http://weihoop.com/2009/08/02/memory-size-exhausted/</id>
     <published>2009-08-02T06:04:25.000Z</published>
-    <updated>2017-01-25T20:10:00.000Z</updated>
+    <updated>2017-01-25T20:10:42.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="PHP报错此种错误"><a href="#PHP报错此种错误" class="headerlink" title="PHP报错此种错误"></a>PHP报错此种错误</h3><p>Allowed memory size of  xxx bytes exhausted at xxx:xxx (tried to allocate xxx bytes)</p>
 <h3 id="出现该错误的原因"><a href="#出现该错误的原因" class="headerlink" title="出现该错误的原因"></a>出现该错误的原因</h3><p>是因为PHP页面消耗的最大内存小，如果文件太大 或图片太大 在读取的时候 会发生上述错误。</p>
 <a id="more"></a>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="1-修改-php-ini"><a href="#1-修改-php-ini" class="headerlink" title="1. 修改 php.ini"></a>1. 修改 php.ini</h4><p>将memory_limit由 64M 改成 128M（或更大），重启PHP服务（apache+php，重启apache服务）</p>
-<h3 id="2-修改PHP程序"><a href="#2-修改PHP程序" class="headerlink" title="2. 修改PHP程序"></a>2. 修改PHP程序</h3><p>在php文件中 加入 </p>
+<p>@### 2. 修改PHP程序</p>
+<p>在php文件中 加入 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ini_set(“memory_limit”,”128M”);</div></pre></td></tr></table></figure>
 <p>注意:为了系统的其它资源的正常使用 请您不要将 memory_limit设置太大，其中-1为不限</p>
-<h3 id="3-修改-htaccess-文档"><a href="#3-修改-htaccess-文档" class="headerlink" title="3. 修改.htaccess 文档"></a>3. 修改.htaccess 文档</h3><p>修改前提是前提是该目录支持.htacces</p>
+<h4 id="3-修改-htaccess-文档"><a href="#3-修改-htaccess-文档" class="headerlink" title="3. 修改.htaccess 文档"></a>3. 修改.htaccess 文档</h4><p>修改前提是前提是该目录支持.htacces</p>
 <p>在文档中新增一句：php_value memory_limit 16M(或更大)</p>
 ]]></content>
     
