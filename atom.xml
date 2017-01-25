@@ -183,20 +183,17 @@
     <link href="http://weihoop.com/2009/11/02/mysql-cmd/"/>
     <id>http://weihoop.com/2009/11/02/mysql-cmd/</id>
     <published>2009-11-02T04:31:02.000Z</published>
-    <updated>2017-01-25T19:47:25.000Z</updated>
+    <updated>2017-01-25T19:48:53.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><hr>
-<h4 id="1-登录使用默认3306端口的MySQL"><a href="#1-登录使用默认3306端口的MySQL" class="headerlink" title="1. 登录使用默认3306端口的MySQL"></a>1. 登录使用默认3306端口的MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><h4 id="1-登录使用默认3306端口的MySQL"><a href="#1-登录使用默认3306端口的MySQL" class="headerlink" title="1. 登录使用默认3306端口的MySQL"></a>1. 登录使用默认3306端口的MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
 <h4 id="2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）"><a href="#2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）" class="headerlink" title="2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）"></a>2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –protocol=tcp –host=localhost –port=3307</div></pre></td></tr></table></figure>
 <h4 id="3-通过socket套接字管理不同端口的多个MySQL"><a href="#3-通过socket套接字管理不同端口的多个MySQL" class="headerlink" title="3. 通过socket套接字管理不同端口的多个MySQL"></a>3. 通过socket套接字管理不同端口的多个MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –socket=/tmp/mysql3307.sock</div></pre></td></tr></table></figure>
 <h4 id="4-通过端口和IP管理不同端口的多个MySQL"><a href="#4-通过端口和IP管理不同端口的多个MySQL" class="headerlink" title="4. 通过端口和IP管理不同端口的多个MySQL"></a>4. 通过端口和IP管理不同端口的多个MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p -P 3306 -h 127.0.0.1</div></pre></td></tr></table></figure>
-<h2 id="数据库操作SQL语句"><a href="#数据库操作SQL语句" class="headerlink" title="数据库操作SQL语句"></a>数据库操作SQL语句</h2><hr>
-<h4 id="1-显示Mysql所有数据库"><a href="#1-显示Mysql所有数据库" class="headerlink" title="1. 显示Mysql所有数据库"></a>1. 显示Mysql所有数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; SHOW DATABASES;</div></pre></td></tr></table></figure>
+<h2 id="数据库操作SQL语句"><a href="#数据库操作SQL语句" class="headerlink" title="数据库操作SQL语句"></a>数据库操作SQL语句</h2><h4 id="1-显示Mysql所有数据库"><a href="#1-显示Mysql所有数据库" class="headerlink" title="1. 显示Mysql所有数据库"></a>1. 显示Mysql所有数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; SHOW DATABASES;</div></pre></td></tr></table></figure>
 <h4 id="2-创建名称为test的数据库"><a href="#2-创建名称为test的数据库" class="headerlink" title="2. 创建名称为test的数据库"></a>2. 创建名称为test的数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; CREATE DATABASE test;</div></pre></td></tr></table></figure>
 <h4 id="3-删除名称为test的数据库"><a href="#3-删除名称为test的数据库" class="headerlink" title="3. 删除名称为test的数据库"></a>3. 删除名称为test的数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; DROP DATABASE test;</div></pre></td></tr></table></figure>
 <h4 id="4-选择test数据库"><a href="#4-选择test数据库" class="headerlink" title="4. 选择test数据库"></a>4. 选择test数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; USE test;</div></pre></td></tr></table></figure>
-<h2 id="表操作SQL语句"><a href="#表操作SQL语句" class="headerlink" title="表操作SQL语句"></a>表操作SQL语句</h2><hr>
-<h4 id="1-显示当前数据库中存在什么表"><a href="#1-显示当前数据库中存在什么表" class="headerlink" title="1. 显示当前数据库中存在什么表"></a>1. 显示当前数据库中存在什么表</h4><p>mysql &gt; SHOW TABLES;</p>
+<h2 id="表操作SQL语句"><a href="#表操作SQL语句" class="headerlink" title="表操作SQL语句"></a>表操作SQL语句</h2><h4 id="1-显示当前数据库中存在什么表"><a href="#1-显示当前数据库中存在什么表" class="headerlink" title="1. 显示当前数据库中存在什么表"></a>1. 显示当前数据库中存在什么表</h4><p>mysql &gt; SHOW TABLES;</p>
 <h4 id="2-创建数据库表user：在mysql-gt-后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。"><a href="#2-创建数据库表user：在mysql-gt-后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。" class="headerlink" title="2. 创建数据库表user：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。"></a>2. 创建数据库表user：在mysql&gt;后粘贴以下SQL语句，存储引擎为MYISAM，字段id为主键、唯一索引。</h4><p>mysql &gt; CREATE TABLE <code>spitfire</code> (<br><code>id</code> INT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT,<br><code>username</code> VARCHAR( 20 ) NOT NULL,<br><code>password</code> CHAR( 32 ) NOT NULL,<br><code>time</code> DATETIME NOT NULL,<br><code>number</code> FLOAT( 10 ) NOT NULL,<br><code>content</code> TEXT NOT NULL,<br>PRIMARY KEY (<code>id</code>)<br>) ENGINE = INNODB ;</p>
 <p>INSERT INTO <code>spitfire</code> (<code>id</code>, <code>username</code>, <code>password</code>, <code>time</code>, <code>number</code>) VALUES (’1′, ‘lhw’, ’123456′, ’2011-1-1′, 8888);</p>
 <h4 id="3-查看user表结构"><a href="#3-查看user表结构" class="headerlink" title="3. 查看user表结构"></a>3. 查看user表结构</h4><p>mysql &gt; DESCRIBE user;</p>
@@ -262,8 +259,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h2&gt;&lt;hr&gt;
-&lt;h4 id=&quot;1-登录使用默认3306端口的MySQL&quot;&gt;&lt;a href=&quot;#1-登录使用默认3306端口的MySQL&quot; class=
+      &lt;h2 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h2&gt;&lt;h4 id=&quot;1-登录使用默认3306端口的MySQL&quot;&gt;&lt;a href=&quot;#1-登录使用默认3306端口的MySQL&quot; class=&quot;head
     
     </summary>
     
