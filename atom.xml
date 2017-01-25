@@ -83,21 +83,18 @@
     <link href="http://weihoop.com/2010/02/26/cwrsync-window/"/>
     <id>http://weihoop.com/2010/02/26/cwrsync-window/</id>
     <published>2010-02-25T18:59:49.000Z</published>
-    <updated>2017-01-25T19:15:10.000Z</updated>
+    <updated>2017-01-25T20:01:22.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><hr>
-<p>下载地址：</p>
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载地址：</p>
 <p><a href="http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip" target="_blank" rel="external">http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip</a></p>
 <p>将Server或者Client软件安装到服务器端和客户端服务器上，Server包含Client软件所以只安装Server软件即可。</p>
-<h2 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h2><hr>
-<p>服务端IP: 10.0.101.174</p>
+<a id="more"></a>
+<h2 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h2><p>服务端IP: 10.0.101.174</p>
 <h3 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h3><p>编写文件: C:\Program Files\ICW\rsyncd.conf</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">uid = 0</div><div class="line">gid = 0</div><div class="line">use chroot = false</div><div class="line">strict modes = false</div><div class="line">read only = yes</div><div class="line">list = no</div><div class="line">hosts allow = *</div><div class="line">max connections = 3</div><div class="line">secrets file = rsyncd.secrets     #指定用户登录的密码文件</div><div class="line">motd file = rsyncd.motd           #连接上rsync server时显示的欢迎信息</div><div class="line">log file = rsyncd.log</div><div class="line">pid file = rsyncd.pid</div><div class="line">transfer logging = yes</div><div class="line"># Module definitions</div><div class="line"># Remember cygwin naming conventions : c:/work becomes /cygwin/c/work</div><div class="line"></div><div class="line">[test]</div><div class="line">path = /cygdrive/c/work</div><div class="line">read only = false</div><div class="line">transfer logging = yes</div><div class="line"></div><div class="line">[cwrsync]</div><div class="line">path = /cygdrive/d/rsyncfile</div><div class="line">read only = false</div><div class="line">auth users = test</div><div class="line">secrets file= /cygdrive/c/Program Files/icw/rsyncd.passwd</div><div class="line">transfer logging = yes</div></pre></td></tr></table></figure>
 <h3 id="2-建立密码文件"><a href="#2-建立密码文件" class="headerlink" title="2. 建立密码文件"></a>2. 建立密码文件</h3><p>在C:\Program Files\ICW目录下新建密码文件 rsyncd.passwd 内容为用户名密码，如: test:test</p>
-<h2 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h2><hr>
-<h3 id="1-Windows客户端"><a href="#1-Windows客户端" class="headerlink" title="1. Windows客户端"></a>1. Windows客户端</h3><p>在cmd命令下执行</p>
+<h2 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h2><h3 id="1-Windows客户端"><a href="#1-Windows客户端" class="headerlink" title="1. Windows客户端"></a>1. Windows客户端</h3><p>在cmd命令下执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;C:\Program Files\icw\bin\chmod.exe” 600 “/cygdrive/C/Program Files/icw/rsyncd.passwd&quot;</div></pre></td></tr></table></figure>
 <p>CMD 下输入下面命令即可同步服务器端cwrsync模块到客户端d:/rsyncfile目录下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">“C:\Program Files\ICW/bin/rsync.exe” -vzrtopg –progress –password-file=”/cygdrive/C/Program Files/icw/rsyncd.passwd” test@10.0.101.174::cwrsync /cygdrive/d/rsyncfile</div><div class="line">“C:\Program Files\icw\bin\rsync” -vzrtopg –progress –password-file=”/cygdrive/C/Program Files/icw/rsync.passwd” test@10.0.101.174::cwrsync /cygdrive/d/rsyncfile</div></pre></td></tr></table></figure>
@@ -109,8 +106,7 @@
 <h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>以上为匿名连接入服务器端，一般会在模块里添加 auth user= administrator 指定用户，一定要注意，指定的用户必须要登陆才能进行同步服务。</p>
 <h3 id="2-linux客户端"><a href="#2-linux客户端" class="headerlink" title="2. linux客户端"></a>2. linux客户端</h3><p>输入下面命令进行同步</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -vzrtopg –password-file=/etc/cwrsync.pass –progress cwsync@10.0.101.174::test  /rsyncfile</div></pre></td></tr></table></figure>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><hr>
-<h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync: read error: Connection reset by peer (104) rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]</div></pre></td></tr></table></figure>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync: read error: Connection reset by peer (104) rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：很大可能是服务器端没有开启 rsync 服务。开启服务。</p>
 <h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@ERROR: chdir failed rsync error: error starting client-server protocol (code 5) at main.c(1495) [receiver=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：服务器端同步目录没有权限，cwrsync默认用户是Svcwrsync。为同步目录添加用户Svcwrsync权限。</p>
@@ -123,9 +119,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上&lt;/p&gt;
-&lt;h2 id=&quot;
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;适应场景：Windows服务器同步到Windows服务器上，Windows服务器同步到linux服务器上&lt;/p&gt;
+&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip&quot;&gt;http://cdnetworks-kr-1.dl.sourceforge.net/project/sereds/cwRsync/4.1.0/cwRsyncServer_4.1.0_Installer.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将Server或者Client软件安装到服务器端和客户端服务器上，Server包含Client软件所以只安装Server软件即可。&lt;/p&gt;
     
     </summary>
     
@@ -139,12 +136,13 @@
     <link href="http://weihoop.com/2010/01/26/rsync-error/"/>
     <id>http://weihoop.com/2010/01/26/rsync-error/</id>
     <published>2010-01-26T04:50:47.000Z</published>
-    <updated>2017-01-25T18:58:13.000Z</updated>
+    <updated>2017-01-25T20:01:57.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rsync: <span class="built_in">read</span> error: Connection reset by peer (104)</div><div class="line">rsync error: error <span class="keyword">in</span> rsync protocol data stream (code 12) at io.c(794) [receive</div><div class="line">r=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：很大可能是服务器端没有开启 rsync 服务。开启服务。</p>
 <h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@ERROR: chdir failed</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec</div><div class="line">eiver=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：服务器端同步目录没有权限，cwrsync默认用户是Svcwrsync。为同步目录添加用户Svcwrsync权限。</p>
+<a id="more"></a>
 <h3 id="错误3"><a href="#错误3" class="headerlink" title="错误3"></a>错误3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@ERROR: failed to open lock file</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec</div><div class="line">eiver=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：配置文件 rsync.conf中添加 lock file = rsyncd.lock 即可解决</p>
 <h3 id="错误4"><a href="#错误4" class="headerlink" title="错误4"></a>错误4</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rsync: could not open password file “/etc/rsync.pas”: No such file or directory (2)</div><div class="line">Password:</div><div class="line">@ERROR: auth failed on module backup</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1506) [Receiver=3.0.7]</div></pre></td></tr></table></figure>
@@ -169,7 +167,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;错误1&quot;&gt;&lt;a href=&quot;#错误1&quot; class=&quot;headerlink&quot; title=&quot;错误1&quot;&gt;&lt;/a&gt;错误1&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+      &lt;h3 id=&quot;错误1&quot;&gt;&lt;a href=&quot;#错误1&quot; class=&quot;headerlink&quot; title=&quot;错误1&quot;&gt;&lt;/a&gt;错误1&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;rsync: &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; error: Connection reset by peer (104)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rsync error: error &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; rsync protocol data stream (code 12) at io.c(794) [receive&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;r=3.0.2]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解决：很大可能是服务器端没有开启 rsync 服务。开启服务。&lt;/p&gt;
+&lt;h3 id=&quot;错误2&quot;&gt;&lt;a href=&quot;#错误2&quot; class=&quot;headerlink&quot; title=&quot;错误2&quot;&gt;&lt;/a&gt;错误2&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;@ERROR: chdir failed&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eiver=3.0.2]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解决：服务器端同步目录没有权限，cwrsync默认用户是Svcwrsync。为同步目录添加用户Svcwrsync权限。&lt;/p&gt;
     
     </summary>
     
@@ -183,12 +184,13 @@
     <link href="http://weihoop.com/2009/11/02/mysql-cmd/"/>
     <id>http://weihoop.com/2009/11/02/mysql-cmd/</id>
     <published>2009-11-02T04:31:02.000Z</published>
-    <updated>2017-01-25T19:57:01.000Z</updated>
+    <updated>2017-01-25T20:01:43.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><h4 id="1-登录使用默认3306端口的MySQL"><a href="#1-登录使用默认3306端口的MySQL" class="headerlink" title="1. 登录使用默认3306端口的MySQL"></a>1. 登录使用默认3306端口的MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
 <h4 id="2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）"><a href="#2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）" class="headerlink" title="2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）"></a>2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –protocol=tcp –host=localhost –port=3307</div></pre></td></tr></table></figure>
 <h4 id="3-通过socket套接字管理不同端口的多个MySQL"><a href="#3-通过socket套接字管理不同端口的多个MySQL" class="headerlink" title="3. 通过socket套接字管理不同端口的多个MySQL"></a>3. 通过socket套接字管理不同端口的多个MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –socket=/tmp/mysql3307.sock</div></pre></td></tr></table></figure>
 <h4 id="4-通过端口和IP管理不同端口的多个MySQL"><a href="#4-通过端口和IP管理不同端口的多个MySQL" class="headerlink" title="4. 通过端口和IP管理不同端口的多个MySQL"></a>4. 通过端口和IP管理不同端口的多个MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p -P 3306 -h 127.0.0.1</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="数据库操作SQL语句"><a href="#数据库操作SQL语句" class="headerlink" title="数据库操作SQL语句"></a>数据库操作SQL语句</h2><h4 id="1-显示Mysql所有数据库"><a href="#1-显示Mysql所有数据库" class="headerlink" title="1. 显示Mysql所有数据库"></a>1. 显示Mysql所有数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; SHOW DATABASES;</div></pre></td></tr></table></figure>
 <h4 id="2-创建名称为test的数据库"><a href="#2-创建名称为test的数据库" class="headerlink" title="2. 创建名称为test的数据库"></a>2. 创建名称为test的数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; CREATE DATABASE test;</div></pre></td></tr></table></figure>
 <h4 id="3-删除名称为test的数据库"><a href="#3-删除名称为test的数据库" class="headerlink" title="3. 删除名称为test的数据库"></a>3. 删除名称为test的数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql &gt; DROP DATABASE test;</div></pre></td></tr></table></figure>
@@ -248,7 +250,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h2&gt;&lt;h4 id=&quot;1-登录使用默认3306端口的MySQL&quot;&gt;&lt;a href=&quot;#1-登录使用默认3306端口的MySQL&quot; class=&quot;head
+      &lt;h2 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h2&gt;&lt;h4 id=&quot;1-登录使用默认3306端口的MySQL&quot;&gt;&lt;a href=&quot;#1-登录使用默认3306端口的MySQL&quot; class=&quot;headerlink&quot; title=&quot;1. 登录使用默认3306端口的MySQL&quot;&gt;&lt;/a&gt;1. 登录使用默认3306端口的MySQL&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql -u root -p&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）&quot;&gt;&lt;a href=&quot;#2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）&quot; class=&quot;headerlink&quot; title=&quot;2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）&quot;&gt;&lt;/a&gt;2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql -u root -p –protocol=tcp –host=localhost –port=3307&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;3-通过socket套接字管理不同端口的多个MySQL&quot;&gt;&lt;a href=&quot;#3-通过socket套接字管理不同端口的多个MySQL&quot; class=&quot;headerlink&quot; title=&quot;3. 通过socket套接字管理不同端口的多个MySQL&quot;&gt;&lt;/a&gt;3. 通过socket套接字管理不同端口的多个MySQL&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql -u root -p –socket=/tmp/mysql3307.sock&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;4-通过端口和IP管理不同端口的多个MySQL&quot;&gt;&lt;a href=&quot;#4-通过端口和IP管理不同端口的多个MySQL&quot; class=&quot;headerlink&quot; title=&quot;4. 通过端口和IP管理不同端口的多个MySQL&quot;&gt;&lt;/a&gt;4. 通过端口和IP管理不同端口的多个MySQL&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql -u root -p -P 3306 -h 127.0.0.1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

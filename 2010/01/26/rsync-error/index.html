@@ -96,7 +96,7 @@
 <meta property="og:description" content="错误1123rsync: read error: Connection reset by peer (104)rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]
 解决：很大可能是服务器端没有开启 rsync 服务。开启服务。
 错误2123@ERROR: chdir fail">
-<meta property="og:updated_time" content="2017-01-25T18:58:13.000Z">
+<meta property="og:updated_time" content="2017-01-25T20:01:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rsync问题排查">
 <meta name="twitter:description" content="错误1123rsync: read error: Connection reset by peer (104)rsync error: error in rsync protocol data stream (code 12) at io.c(794) [receiver=3.0.2]
@@ -406,6 +406,7 @@
 <p>解决：很大可能是服务器端没有开启 rsync 服务。开启服务。</p>
 <h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@ERROR: chdir failed</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec</div><div class="line">eiver=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：服务器端同步目录没有权限，cwrsync默认用户是Svcwrsync。为同步目录添加用户Svcwrsync权限。</p>
+<a id="more"></a>
 <h3 id="错误3"><a href="#错误3" class="headerlink" title="错误3"></a>错误3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@ERROR: failed to open lock file</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1495) [rec</div><div class="line">eiver=3.0.2]</div></pre></td></tr></table></figure>
 <p>解决：配置文件 rsync.conf中添加 lock file = rsyncd.lock 即可解决</p>
 <h3 id="错误4"><a href="#错误4" class="headerlink" title="错误4"></a>错误4</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rsync: could not open password file “/etc/rsync.pas”: No such file or directory (2)</div><div class="line">Password:</div><div class="line">@ERROR: auth failed on module backup</div><div class="line">rsync error: error starting client-server protocol (code 5) at main.c(1506) [Receiver=3.0.7]</div></pre></td></tr></table></figure>
