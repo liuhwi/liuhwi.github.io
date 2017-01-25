@@ -183,10 +183,10 @@
     <link href="http://weihoop.com/2009/11/02/mysql-cmd/"/>
     <id>http://weihoop.com/2009/11/02/mysql-cmd/</id>
     <published>2009-11-02T04:31:02.000Z</published>
-    <updated>2017-01-25T19:45:30.000Z</updated>
+    <updated>2017-01-25T19:46:21.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><hr>
-<h3 id="1-登录使用默认3306端口的MySQL"><a href="#1-登录使用默认3306端口的MySQL" class="headerlink" title="1. 登录使用默认3306端口的MySQL"></a>1. 登录使用默认3306端口的MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
+<h4 id="1-登录使用默认3306端口的MySQL"><a href="#1-登录使用默认3306端口的MySQL" class="headerlink" title="1. 登录使用默认3306端口的MySQL"></a>1. 登录使用默认3306端口的MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
 <h3 id="2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）"><a href="#2-通过TCP连接管理不同端口的多个MySQL（注意：MySQL4-1以上版本才有此项功能）" class="headerlink" title="2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）"></a>2. 通过TCP连接管理不同端口的多个MySQL（注意：MySQL4.1以上版本才有此项功能）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –protocol=tcp –host=localhost –port=3307</div></pre></td></tr></table></figure>
 <h3 id="3-通过socket套接字管理不同端口的多个MySQL"><a href="#3-通过socket套接字管理不同端口的多个MySQL" class="headerlink" title="3. 通过socket套接字管理不同端口的多个MySQL"></a>3. 通过socket套接字管理不同端口的多个MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p –socket=/tmp/mysql3307.sock</div></pre></td></tr></table></figure>
 <h3 id="4-通过端口和IP管理不同端口的多个MySQL"><a href="#4-通过端口和IP管理不同端口的多个MySQL" class="headerlink" title="4. 通过端口和IP管理不同端口的多个MySQL"></a>4. 通过端口和IP管理不同端口的多个MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p -P 3306 -h 127.0.0.1</div></pre></td></tr></table></figure>
@@ -263,7 +263,7 @@
     <summary type="html">
     
       &lt;h2 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=&quot;headerlink&quot; title=&quot;登录&quot;&gt;&lt;/a&gt;登录&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;1-登录使用默认3306端口的MySQL&quot;&gt;&lt;a href=&quot;#1-登录使用默认3306端口的MySQL&quot; class=
+&lt;h4 id=&quot;1-登录使用默认3306端口的MySQL&quot;&gt;&lt;a href=&quot;#1-登录使用默认3306端口的MySQL&quot; class=
     
     </summary>
     
