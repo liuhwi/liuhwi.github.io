@@ -293,4 +293,42 @@
     
   </entry>
   
+  <entry>
+    <title>限制在Windows 2003 的终端连接数</title>
+    <link href="http://weihoop.com/2008/01/10/win2003-terminal-limit/"/>
+    <id>http://weihoop.com/2008/01/10/win2003-terminal-limit/</id>
+    <published>2008-01-10T08:58:56.000Z</published>
+    <updated>2017-01-26T09:20:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="如何限制在终端服务器上的远程会话的数量"><a href="#如何限制在终端服务器上的远程会话的数量" class="headerlink" title="如何限制在终端服务器上的远程会话的数量"></a>如何限制在终端服务器上的远程会话的数量</h3><ul>
+<li>若要打开终端服务配置工具，单击 开始，指向 管理工具，然后单击 终端服务配置。</li>
+<li>在控制台树中单击 连接。</li>
+<li>在右侧窗格中 rdp-tcp，用鼠标右键单击，然后单击 属性。</li>
+<li>在 网卡 选项卡上单击从 最多连接 列表中选择 1。</li>
+<li>在 权限 选项卡上单击 添加、 输入对象名称来选择 (示例) 框中键入 所有人 单击 检查姓名框中，然后单击 确定。</li>
+<li>在 组或用户名称 区域中单击以选中 Everyone 组。</li>
+<li>每个用户的权限 区域中单击以选中要拒绝权限的 来宾访问，拒绝 复选框，然后单击 确定。</li>
+</ul>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><ul>
+<li>此设置允许称为会话 0 的只有一个远程连接。可以只通过控制台进行此连接。</li>
+<li>连接的基于 Windows XP 的计算机上或在一台基于 Windows Server 2003 的计算机上的终端服务器控制台会话时根据使用以下命令：</li>
+<li>若要将该服务器的远程桌面连接使用 mstsc.exe /console 命令。</li>
+<li>如果您使用远程桌面连接 6.1 客户端或更高版本的客户端，使用 mstsc.exe /admin 命令。</li>
+<li>有关远程桌面连接 6.1 客户端的详细信息，请单击下面的文章编号，以查看 Microsoft 知识库中相应的文章：</li>
+</ul>
+<p>952155  远程桌面连接 6.1 客户端的说明在 Windows XP Service Pack 2 中的终端服务的更新</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;如何限制在终端服务器上的远程会话的数量&quot;&gt;&lt;a href=&quot;#如何限制在终端服务器上的远程会话的数量&quot; class=&quot;headerlink&quot; title=&quot;如何限制在终端服务器上的远程会话的数量&quot;&gt;&lt;/a&gt;如何限制在终端服务器上的远程会话的数量&lt;/h3&gt;&lt;ul&gt;
+
+    
+    </summary>
+    
+    
+      <category term="windows" scheme="http://weihoop.com/tags/windows/"/>
+    
+  </entry>
+  
 </feed>
